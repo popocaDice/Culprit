@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://cv6gavjrsud3r"]
+
+[ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_51v1g"]
+
+[sub_resource type="Animation" id="Animation_lky77"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2vd4b"]
+resource_name = "head_bob_sprint"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, -0.624155, 0, -0.2, -0.00187395, 0, 0.00479383),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_bdcdp"]
+resource_name = "head_bob_walk"
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, -0.00290463, -0.0497703, -0.1, 0.0380784, 0.1, 0.0385666, 0, -0.1, -0.00339281, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_su3v2"]
+resource_name = "reset"
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xiqh7"]
+_data = {
+"RESET": SubResource("Animation_lky77"),
+"head_bob_sprint": SubResource("Animation_2vd4b"),
+"head_bob_walk": SubResource("Animation_bdcdp"),
+"reset": SubResource("Animation_su3v2")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d21lv"]
+radius = 0.25
+height = 1.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kdo87"]
+radius = 0.25
+height = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1gnv"]
+albedo_color = Color(0, 0.996078, 0.996078, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ltwe"]
+size = Vector3(1, 2, 1)
+
+[node name="Player" type="CharacterBody3D"]
+floor_constant_speed = true
+script = ExtResource("1_51v1g")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24, 0)
+
+[node name="Camera" type="Camera3D" parent="Head"]
+
+[node name="camera_animation" type="AnimationPlayer" parent="Head/Camera"]
+libraries = {
+"": SubResource("AnimationLibrary_xiqh7")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("CapsuleShape3D_d21lv")
+
+[node name="HUD" type="Camera2D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource("CapsuleMesh_kdo87")
+surface_material_override/0 = SubResource("StandardMaterial3D_e1gnv")
+
+[node name="InteractionBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_2ltwe")
