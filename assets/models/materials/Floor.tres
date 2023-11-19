@@ -1,12 +1,12 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c08ak071gwrft"]
 
-[ext_resource type="Texture2D" uid="uid://dftw57mho3cnf" path="res://assets/models/Floor_floor.png" id="1_47o46"]
+[ext_resource type="Texture2D" uid="uid://dsdfrefcr4lla" path="res://assets/textures/floor.png" id="1_spqqm"]
 
 [resource]
 resource_name = "Floor"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_47o46")
+albedo_texture = ExtResource("1_spqqm")
 roughness = 0.0
 uv1_scale = Vector3(50, 50, 50)
 texture_filter = 2
