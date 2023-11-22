@@ -1,0 +1,135 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqi4xog8y3kk1"]
+
+[ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_snvrb"]
+[ext_resource type="AudioStream" uid="uid://c04rre7nqpjgg" path="res://assets/music/menuTheme.ogg" id="1_unkpb"]
+[ext_resource type="Theme" uid="uid://x6k7y2aew8c4" path="res://assets/themes/baseUITheme.tres" id="2_esqqn"]
+[ext_resource type="Script" path="res://assets/scripts/MainMenu.gd" id="3_aklbh"]
+[ext_resource type="Texture2D" uid="uid://cym14fyxq43yi" path="res://assets/textures/TITLE.png" id="3_mpx7u"]
+[ext_resource type="PackedScene" uid="uid://2rwfumsr57nv" path="res://assets/prefabs/settings.tscn" id="6_glyjg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2o3lf"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_78d5w"]
+lifetime_randomness = 0.09
+emission_shape = 1
+emission_sphere_radius = 127.38
+particle_flag_disable_z = true
+direction = Vector3(-1, 0.3, 0)
+spread = 30.0
+gravity = Vector3(-5, -1, 0)
+initial_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 2.0
+scale_max = 10.0
+color = Color(0.811765, 0.74902, 1, 1)
+turbulence_noise_strength = 2.47
+attractor_interaction_enabled = false
+
+[sub_resource type="Gradient" id="Gradient_byotx"]
+offsets = PackedFloat32Array(0, 0.632258, 0.909677, 1)
+colors = PackedColorArray(1, 1, 1, 0.0117647, 1, 1, 1, 0.0117647, 1, 1, 1, 0.00784314, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xhd7x"]
+gradient = SubResource("Gradient_byotx")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9, 0.1)
+metadata/_snap_enabled = true
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_snvrb")
+
+[node name="MainMenu" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainMenu"]
+stream = ExtResource("1_unkpb")
+autoplay = true
+bus = &"Music"
+
+[node name="MainMenu" type="Control" parent="MainMenu"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_esqqn")
+script = ExtResource("3_aklbh")
+
+[node name="Panel" type="Panel" parent="MainMenu/MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -320.0
+offset_right = 576.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2o3lf")
+
+[node name="Smoke" type="GPUParticles2D" parent="MainMenu/MainMenu/Panel"]
+position = Vector2(1192, 664)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_78d5w")
+texture = SubResource("GradientTexture2D_xhd7x")
+lifetime = 30.0
+preprocess = 200.0
+
+[node name="Main" type="Control" parent="MainMenu/MainMenu"]
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -328.0
+offset_right = -536.0
+offset_bottom = -288.0
+
+[node name="Title" type="Sprite2D" parent="MainMenu/MainMenu/Main"]
+position = Vector2(576, 192)
+scale = Vector2(0.815152, 0.815152)
+texture = ExtResource("3_mpx7u")
+
+[node name="Start" type="Button" parent="MainMenu/MainMenu/Main"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 328.0
+offset_right = 536.0
+offset_bottom = 376.0
+text = "NEW_GAME"
+
+[node name="Load" type="Button" parent="MainMenu/MainMenu/Main"]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 328.0
+offset_right = 792.0
+offset_bottom = 376.0
+text = "LOAD_GAME"
+
+[node name="Settings" type="Button" parent="MainMenu/MainMenu/Main"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 408.0
+offset_right = 664.0
+offset_bottom = 456.0
+text = "SETTINGS"
+
+[node name="Quit" type="Button" parent="MainMenu/MainMenu/Main"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 488.0
+offset_right = 664.0
+offset_bottom = 536.0
+text = "QUIT_TO_DESKTOP"
+
+[node name="Settings" parent="MainMenu/MainMenu" instance=ExtResource("6_glyjg")]
+layout_mode = 1
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[connection signal="pressed" from="MainMenu/MainMenu/Main/Start" to="MainMenu/MainMenu" method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenu/MainMenu/Main/Settings" to="MainMenu/MainMenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="MainMenu/MainMenu/Main/Quit" to="MainMenu/MainMenu" method="_on_quit_pressed"]

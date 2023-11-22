@@ -1,6 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cv6gavjrsud3r"]
+[gd_scene load_steps=22 format=3 uid="uid://cv6gavjrsud3r"]
 
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_51v1g"]
+[ext_resource type="PackedScene" uid="uid://cv71drfsq2pde" path="res://assets/models/Characters/maphands.glb" id="2_meu4y"]
+[ext_resource type="Script" path="res://assets/scripts/StaminaBar.gd" id="2_o8xbn"]
+[ext_resource type="Script" path="res://assets/scripts/PauseMenu.gd" id="3_lntdj"]
+[ext_resource type="Theme" uid="uid://x6k7y2aew8c4" path="res://assets/themes/baseUITheme.tres" id="4_ow1mb"]
+[ext_resource type="PackedScene" uid="uid://2rwfumsr57nv" path="res://assets/prefabs/settings.tscn" id="5_xjnw5"]
 
 [sub_resource type="Animation" id="Animation_lky77"]
 length = 0.001
@@ -58,10 +63,6 @@ _data = {
 "reset": SubResource("Animation_su3v2")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d21lv"]
-radius = 0.25
-height = 1.5
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kdo87"]
 radius = 0.25
 height = 1.5
@@ -69,22 +70,106 @@ height = 1.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1gnv"]
 albedo_color = Color(0, 0.996078, 0.996078, 1)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d21lv"]
+radius = 0.25
+height = 1.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xou2u"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 0.176471)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 0.270588)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqj4p"]
+bg_color = Color(0.329412, 0.745098, 0.301961, 1)
+
+[sub_resource type="Animation" id="Animation_s8e4o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/StaminaBar:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1qio6"]
+resource_name = "fade_in"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/StaminaBar:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1mhup"]
+resource_name = "fade_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/StaminaBar:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b176t"]
+_data = {
+"RESET": SubResource("Animation_s8e4o"),
+"fade_in": SubResource("Animation_1qio6"),
+"fade_out": SubResource("Animation_1mhup")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ltwe"]
 size = Vector3(1, 2, 1)
 
 [node name="Player" type="CharacterBody3D"]
+process_mode = 1
 floor_constant_speed = true
 script = ExtResource("1_51v1g")
+base_speed = 3
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24, 0)
 
 [node name="Camera" type="Camera3D" parent="Head"]
+near = 0.001
 
 [node name="camera_animation" type="AnimationPlayer" parent="Head/Camera"]
 libraries = {
 "": SubResource("AnimationLibrary_xiqh7")
 }
+
+[node name="Hands" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="maphands" parent="Hands" instance=ExtResource("2_meu4y")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.6, -0.2)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource("CapsuleMesh_kdo87")
+surface_material_override/0 = SubResource("StandardMaterial3D_e1gnv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
@@ -92,13 +177,90 @@ shape = SubResource("CapsuleShape3D_d21lv")
 
 [node name="HUD" type="Camera2D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
-mesh = SubResource("CapsuleMesh_kdo87")
-surface_material_override/0 = SubResource("StandardMaterial3D_e1gnv")
+[node name="StaminaBar" type="ProgressBar" parent="HUD"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -320.0
+offset_top = -288.0
+offset_right = 320.0
+offset_bottom = -264.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_xou2u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xqj4p")
+step = 0.0
+value = 100.0
+show_percentage = false
+script = ExtResource("2_o8xbn")
+
+[node name="BarAnim" type="AnimationPlayer" parent="HUD/StaminaBar"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_b176t")
+}
+blend_times = [&"fade_out", &"fade_in", 0.1, &"RESET", &"fade_in", 0.1]
+
+[node name="PauseMenu" type="Control" parent="HUD"]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("4_ow1mb")
+script = ExtResource("3_lntdj")
+
+[node name="Panel" type="Panel" parent="HUD/PauseMenu"]
+layout_mode = 0
+offset_left = -504.0
+offset_top = -256.0
+offset_right = 520.0
+offset_bottom = 256.0
+theme = ExtResource("4_ow1mb")
+
+[node name="Pause" type="Control" parent="HUD/PauseMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -504.0
+offset_top = -256.0
+offset_right = 512.0
+offset_bottom = 256.0
+
+[node name="Resume" type="Button" parent="HUD/PauseMenu/Pause"]
+layout_mode = 2
+offset_left = 400.0
+offset_top = 144.0
+offset_right = 608.0
+offset_bottom = 192.0
+text = "RESUME_GAME"
+
+[node name="Settings" type="Button" parent="HUD/PauseMenu/Pause"]
+layout_mode = 2
+offset_left = 400.0
+offset_top = 232.0
+offset_right = 608.0
+offset_bottom = 280.0
+text = "SETTINGS"
+
+[node name="Quit" type="Button" parent="HUD/PauseMenu/Pause"]
+layout_mode = 2
+offset_left = 400.0
+offset_top = 320.0
+offset_right = 608.0
+offset_bottom = 360.0
+text = "QUIT_TO_MAIN_MENU"
+
+[node name="Settings" parent="HUD/PauseMenu" instance=ExtResource("5_xjnw5")]
+layout_mode = 1
+offset_right = -40.0
+offset_bottom = -40.0
 
 [node name="InteractionBox" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_2ltwe")
+
+[connection signal="pressed" from="HUD/PauseMenu/Pause/Resume" to="HUD/PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="HUD/PauseMenu/Pause/Settings" to="HUD/PauseMenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="HUD/PauseMenu/Pause/Quit" to="HUD/PauseMenu" method="_on_quit_pressed"]

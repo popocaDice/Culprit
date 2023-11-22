@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://dhiomi2nv4gn1" path="res://assets/models/materials/Wall.tres" id="1_pqtdl"]
 [ext_resource type="Material" uid="uid://d3c0at8od2uqm" path="res://assets/models/materials/Wood.tres" id="2_d6pju"]
-[ext_resource type="Script" path="res://assets/scenes/Door.gd" id="3_318x1"]
+[ext_resource type="Script" path="res://assets/scripts/Door.gd" id="3_rcuou"]
 [ext_resource type="Material" uid="uid://dkrrinx01cbq7" path="res://assets/models/materials/Metal.tres" id="4_bqjen"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4wjiv"]
@@ -219,7 +219,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.255)
 metadata/open = false
 
 [node name="InteractionTriggerArea" type="Area3D" parent="Door"]
-script = ExtResource("3_318x1")
+script = ExtResource("3_rcuou")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door/InteractionTriggerArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.5)

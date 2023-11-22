@@ -7,12 +7,15 @@ var waiting : bool = false
 var player_in_sight : bool = false
 var chasing : float = 0
 var patrolling : float = 0
+var player_in_attack_range : bool = false
+var can_attack : bool = true
 
 @export var walk_movement_speed : float
 @export var sprint_movement_speed : float
 @export var chase_duration : int
 @export var listen_radius : float
 @export var patrol_duration : int
+@export var attack_cooldown : float
 
 @onready var sight : RayCast3D = $Sight
 var player : Node3D
@@ -21,13 +24,16 @@ var player : Node3D
 func _ready():
 	player = get_node("/root/World/Player")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	sight.target_position = sight.to_local(player.position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if(sight.get_collider() == player):
+	if (player_in_attack_range or not can_attack):
+		if (can_attack): attackState()
+		
+	elif(sight.get_collider() == player):
 		idle = false
 		waiting = false
 		player_in_sight = true
@@ -40,7 +46,7 @@ func _process(delta):
 			chaseLostPlayerState()
 			waiting = true
 	
-	elif (player.sprinting and player.global_position.distance_to(global_position) < listen_radius):
+	elif (player.sprinting and player.position.distance_to(global_position) < listen_radius):
 		idle = false
 		waiting = false
 		patrolling = patrol_duration
@@ -66,11 +72,14 @@ func idleState():
 	if not idle: return
 	idle = false
 	current_movement_speed = walk_movement_speed
-	get_parent_node_3d().set_movement_target(get_parent_node_3d().position + Vector3(randf_range(-8, 8), 0, randf_range(-8, 8)))
+	get_parent_node_3d().set_movement_target(global_position + Vector3(randf_range(-8, 8), 0, randf_range(-8, 8)))
 	return
 
 func playerInSightState():
-	if chasing <= 0: await get_tree().create_timer(3).timeout
+	if current_movement_speed == walk_movement_speed:
+		get_parent_node_3d().set_movement_target(global_position)
+		idle = false
+		await get_tree().create_timer(3).timeout
 	chasing = chase_duration
 	current_movement_speed = sprint_movement_speed
 	get_parent_node_3d().set_movement_target(player.position)
@@ -93,5 +102,24 @@ func patrolState():
 	await get_tree().create_timer(2).timeout
 	if(waiting):
 		waiting = false
-		get_parent_node_3d().set_movement_target(get_parent_node_3d().position + Vector3(randf_range(-8, 8), 0, randf_range(-8, 8)))
+		current_movement_speed = sprint_movement_speed
+		get_parent_node_3d().set_movement_target(global_position + Vector3(randf_range(-8, 8), 0, randf_range(-8, 8)))
 	return
+	
+func attackState():
+	can_attack = false
+	await get_tree().create_timer(0.3).timeout
+	player.damagePercent(50)
+	await get_tree().create_timer(attack_cooldown).timeout
+	can_attack = true
+	
+
+
+func _on_area_3d_body_entered(body):
+	if body == player:
+		player_in_attack_range = true
+
+
+func _on_area_3d_body_exited(body):
+	if body == player:
+		player_in_attack_range = false

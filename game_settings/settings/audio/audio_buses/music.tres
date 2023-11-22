@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://14361erav2ke"]
+
+[ext_resource type="Script" path="res://game_settings/templates/audio/audio_volume.gd" id="1_qq651"]
+
+[resource]
+resource_name = "audio_buses_music"
+script = ExtResource("1_qq651")
+audio_bus = "Music"
+current = 80.0
+default = 80.0
+name = "audio_buses_music"
+category = "audio"
+value_type = 3
+value_hint = 1
+value_hint_string = "0,100"

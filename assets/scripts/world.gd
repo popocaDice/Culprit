@@ -8,16 +8,28 @@ signal unpause
 
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass
 
 func pause_game():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	#get_tree().paused = true #In case you want to pause the game
+	get_tree().paused = true #In case you want to pause the game
 	pause.emit()
 
 func unpause_game():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	#get_tree().paused = false
+	get_tree().paused = false
+	unpause.emit()
+
+func loadMainMenu():
+	get_tree().change_scene_to_file("res://assets/scenes/mainMenu.tscn")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().paused = false
+	unpause.emit()
+	
+func loadScene(path: String):
+	get_tree().change_scene_to_file(path)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_tree().paused = false
 	unpause.emit()
 
 func _process(_delta):

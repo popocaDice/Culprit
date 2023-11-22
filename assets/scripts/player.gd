@@ -5,6 +5,9 @@ extends CharacterBody3D
 @export var jump_velocity = 4
 @export var sensitivity = 0.1
 @export var accel = 10
+@export var max_stamina = 6.0
+
+var stamina = max_stamina
 var speed = base_speed
 var sprinting = false
 var camera_fov_extents = [75.0, 85.0] #index 0 is normal, index 1 is sprinting
@@ -12,8 +15,11 @@ var camera_fov_extents = [75.0, 85.0] #index 0 is normal, index 1 is sprinting
 
 @onready var parts = {
 	"head": $Head,
+	"hands": $Hands,
 	"camera": $Head/Camera,
-	"camera_animation": $Head/Camera/camera_animation
+	"camera_animation": $Head/Camera/camera_animation,
+	"stamina_bar": $HUD/StaminaBar,
+	"pause": $HUD/PauseMenu
 }
 @onready var world = get_parent()
 
@@ -25,17 +31,31 @@ func _ready():
 	world.unpause.connect(_on_unpause)
 	
 	parts.camera.current = true
+	parts.stamina_bar.max_value = max_stamina
 
 func _process(delta):
 	if Input.is_action_pressed("move_sprint"):
-		sprinting = true
-		speed = sprint_speed
-		parts.camera.fov = lerp(parts.camera.fov, camera_fov_extents[1], 10*delta)
-	else:
+		if (stamina > 0):
+			stamina -= delta
+			sprinting = true
+			speed = sprint_speed
+			parts.camera.fov = lerp(parts.camera.fov, camera_fov_extents[1], 10*delta)
+		
+		else:
+			sprinting = false
+			speed = base_speed
+			parts.camera.fov = lerp(parts.camera.fov, camera_fov_extents[0], 10*delta)
+	
+	elif stamina <= max_stamina:
 		sprinting = false
 		speed = base_speed
-		parts.camera.fov = lerp(parts.camera.fov, camera_fov_extents[0], 10*delta)
+		stamina += delta/2
 		
+	if Input.is_action_pressed("game_pause"):
+		world.pause_game()
+		parts.pause.show()
+	
+	parts.stamina_bar.setValue(stamina)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -65,6 +85,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		if !world.paused:
 			parts.head.rotation_degrees.y -= event.relative.x * sensitivity
+			parts.hands.rotation_degrees.y -= event.relative.x * sensitivity
 			parts.head.rotation_degrees.x -= event.relative.y * sensitivity
 			parts.head.rotation.x = clamp(parts.head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
@@ -73,3 +94,9 @@ func _on_pause():
 
 func _on_unpause():
 	pass
+
+func damage(value):
+	stamina -= value
+	
+func damagePercent(value):
+	stamina -= (value*max_stamina)/100
