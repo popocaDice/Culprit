@@ -1,10 +1,10 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d3c0at8od2uqm"]
 
-[ext_resource type="Texture2D" uid="uid://cjyug34br8u3m" path="res://assets/models/Door_wood.png" id="1_r8ljw"]
+[ext_resource type="Texture2D" uid="uid://dknc5ymdgimuh" path="res://assets/textures/wood.png" id="1_aq6m0"]
 
 [resource]
 resource_name = "Wood"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_r8ljw")
-texture_filter = 2
+albedo_texture = ExtResource("1_aq6m0")
+texture_filter = 0

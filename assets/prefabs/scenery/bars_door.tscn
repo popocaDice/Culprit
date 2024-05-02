@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbii0ykwoolg0"]
+
+[ext_resource type="PackedScene" uid="uid://7tcxi0a3pchj" path="res://assets/models/Scenery/BarsDoor.glb" id="1_xn6xd"]
+[ext_resource type="Material" uid="uid://dkrrinx01cbq7" path="res://assets/models/materials/Metal.tres" id="2_1ence"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uqutl"]
+size = Vector3(20, 240, 400)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p556h"]
+size = Vector3(20, 160, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kqtc3"]
+size = Vector3(20, 20, 300)
+
+[node name="BarsDoor" instance=ExtResource("1_xn6xd")]
+
+[node name="BarsDoor2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_1ence")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BarsDoor2" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BarsDoor2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -120, -200)
+shape = SubResource("BoxShape3D_uqutl")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BarsDoor2/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -320, -350)
+shape = SubResource("BoxShape3D_p556h")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BarsDoor2/StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -390, -150)
+shape = SubResource("BoxShape3D_kqtc3")

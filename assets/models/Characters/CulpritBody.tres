@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://5qab10ow3tc"]
+
+[resource]
+resource_name = "CulpritBody"
+transparency = 4
+cull_mode = 2
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.34
+emission_enabled = true
+emission = Color(0.196078, 0.376471, 0.517647, 1)

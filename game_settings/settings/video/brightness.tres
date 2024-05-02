@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://7b8kl8jypl8"]
+
+[ext_resource type="Script" path="res://game_settings/settings/video/brightness.gd" id="1_g2p5j"]
+
+[resource]
+resource_name = "brightness"
+script = ExtResource("1_g2p5j")
+current = 1.0
+default = 1.0
+name = "brightness"
+category = "video"
+value_type = 3
+value_hint = 1
+value_hint_string = "0.1,3"

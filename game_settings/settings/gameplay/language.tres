@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://s8qt6vwlm52"]
+
+[ext_resource type="Script" path="res://game_settings/settings/gameplay/language.gd" id="1_h1q4e"]
+
+[resource]
+resource_name = "language"
+script = ExtResource("1_h1q4e")
+languages = Array[String](["pt_BR", "en"])
+current = 0
+default = 0
+name = "language"
+category = "gameplay"
+value_type = 2
+value_hint = 2
+value_hint_string = "pt_BR_LANGUAGE,en_LANGUAGE"

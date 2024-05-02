@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbxa1cf5l74bf"]
+
+[ext_resource type="PackedScene" uid="uid://ntoi7oek02dw" path="res://assets/models/Scenery/MountedTorch.glb" id="1_80nsb"]
+[ext_resource type="Material" uid="uid://dk471f65l1xak" path="res://assets/models/materials/Light.tres" id="2_0v7p2"]
+[ext_resource type="Texture2D" uid="uid://chaoc3jkl5g1g" path="res://assets/textures/fire.png" id="3_j31nm"]
+[ext_resource type="AudioStream" uid="uid://dr340nsqw2m4b" path="res://assets/audio/torchLoop.wav" id="4_2ilss"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lswms"]
+lifetime_randomness = 0.1
+emission_shape = 1
+emission_sphere_radius = 0.1
+particle_flag_rotate_y = true
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 0.05, 0)
+initial_velocity_max = 0.05
+angle_min = -90.0
+angle_max = 90.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vge86"]
+transparency = 1
+albedo_texture = ExtResource("3_j31nm")
+emission_enabled = true
+emission_texture = ExtResource("3_j31nm")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vakfk"]
+material = SubResource("StandardMaterial3D_vge86")
+size = Vector2(0.3, 0.3)
+orientation = 0
+
+[sub_resource type="GDScript" id="GDScript_dhax4"]
+resource_name = "attenuation"
+script/source = "extends AudioStreamPlayer3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	attenuation_model = 2
+"
+
+[node name="MountedTorch" instance=ExtResource("1_80nsb")]
+
+[node name="MountedTorch2" parent="." index="0"]
+surface_material_override/1 = ExtResource("2_0v7p2")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="MountedTorch2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305883, 2.41029, -1.58189)
+amount = 5
+lifetime = 2.0
+preprocess = 3.0
+randomness = 0.1
+process_material = SubResource("ParticleProcessMaterial_lswms")
+draw_pass_1 = SubResource("QuadMesh_vakfk")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MountedTorch2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.545, 2.418, -1.569)
+light_color = Color(0.784314, 0.396078, 0.054902, 1)
+light_energy = 5.0
+light_specular = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 50.0
+distance_fade_shadow = 80.0
+omni_range = 10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="MountedTorch2" index="2"]
+stream = ExtResource("4_2ilss")
+attenuation_model = 2
+volume_db = -15.0
+unit_size = 4.0
+autoplay = true
+bus = &"SFX"
+script = SubResource("GDScript_dhax4")

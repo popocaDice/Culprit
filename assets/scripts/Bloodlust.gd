@@ -18,11 +18,13 @@ var can_attack : bool = true
 @export var attack_cooldown : float
 
 @onready var sight : RayCast3D = $Sight
+var animator: AnimationPlayer
 var player : Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_node("/root/World/Player")
+	animator = get_node("../Bloodlust/Armature/Skeleton3D/AnimationPlayer")
 
 func _physics_process(_delta):
 	sight.target_position = sight.to_local(player.position)
@@ -42,9 +44,11 @@ func _process(delta):
 	elif (chasing > 0):
 		player_in_sight = false
 		chasing -= delta
+		patrolling = patrol_duration
 		if not waiting: 
-			chaseLostPlayerState()
 			waiting = true
+			animator.play("idle")
+			chaseLostPlayerState()
 	
 	elif (player.sprinting and player.position.distance_to(global_position) < listen_radius):
 		idle = false
@@ -54,10 +58,10 @@ func _process(delta):
 		
 	elif idle and patrolling >= 0:
 		patrolling -= delta
-		print_debug(patrolling)
 		if not waiting:
-			patrolState()
 			waiting = true
+			animator.play("idle")
+			patrolState()
 	
 	elif idle && not waiting:
 		waiting = true
@@ -67,11 +71,13 @@ func getMovementSpeed():
 	return current_movement_speed
 
 func idleState():
+	animator.play("idle")
+	current_movement_speed = walk_movement_speed
 	await get_tree().create_timer(randf_range(2.0, 10.0)).timeout
 	waiting = false
 	if not idle: return
 	idle = false
-	current_movement_speed = walk_movement_speed
+	animator.play("walk")
 	get_parent_node_3d().set_movement_target(global_position + Vector3(randf_range(-8, 8), 0, randf_range(-8, 8)))
 	return
 
@@ -79,21 +85,29 @@ func playerInSightState():
 	if current_movement_speed == walk_movement_speed:
 		get_parent_node_3d().set_movement_target(global_position)
 		idle = false
+		animator.play("howl")
+		$bufando.stop()
+		if not $rugindo.playing: $rugindo.play()
 		await get_tree().create_timer(3).timeout
+		current_movement_speed = sprint_movement_speed
+		$bufando.play()
+	animator.play("sprint")
 	chasing = chase_duration
 	current_movement_speed = sprint_movement_speed
 	get_parent_node_3d().set_movement_target(player.position)
 	return
 
 func chaseLostPlayerState():
+	current_movement_speed = sprint_movement_speed
 	await get_tree().create_timer(4).timeout
 	if (player_in_sight): return
+	animator.play("sprint")
 	waiting = false
-	current_movement_speed = sprint_movement_speed
 	get_parent_node_3d().set_movement_target(player.position)
 	return
 
 func chaseSoundState():
+	animator.play("sprint")
 	current_movement_speed = sprint_movement_speed
 	get_parent_node_3d().set_movement_target(player.position)
 	return
@@ -103,11 +117,14 @@ func patrolState():
 	if(waiting):
 		waiting = false
 		current_movement_speed = sprint_movement_speed
+		animator.play("sprint")
 		get_parent_node_3d().set_movement_target(global_position + Vector3(randf_range(-8, 8), 0, randf_range(-8, 8)))
 	return
 	
 func attackState():
 	can_attack = false
+	animator.play("attack")
+	$atacando.play()
 	await get_tree().create_timer(0.3).timeout
 	player.damagePercent(50)
 	await get_tree().create_timer(attack_cooldown).timeout

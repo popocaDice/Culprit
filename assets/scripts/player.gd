@@ -2,12 +2,15 @@ extends CharacterBody3D
 
 @export var base_speed = 5
 @export var sprint_speed = 8
+@export var sneak_speed = 1
 @export var jump_velocity = 4
 @export var sensitivity = 0.1
 @export var accel = 10
 @export var max_stamina = 6.0
+@export var tired_duration = 1.5
 
 var stamina = max_stamina
+var regen_stamina: bool = true
 var speed = base_speed
 var sprinting = false
 var camera_fov_extents = [75.0, 85.0] #index 0 is normal, index 1 is sprinting
@@ -19,11 +22,16 @@ var camera_fov_extents = [75.0, 85.0] #index 0 is normal, index 1 is sprinting
 	"camera": $Head/Camera,
 	"camera_animation": $Head/Camera/camera_animation,
 	"stamina_bar": $HUD/StaminaBar,
+	"breathing_audio_player": $Breathing,
+	"sfx_audio_player": $SFX,
+	"ambience_audio_player": $Ambience,
 	"pause": $HUD/PauseMenu
 }
 @onready var world = get_parent()
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+var ambienceWait: bool = false
 
 
 func _ready():
@@ -34,6 +42,9 @@ func _ready():
 	parts.stamina_bar.max_value = max_stamina
 
 func _process(delta):
+	
+	speed = base_speed
+	
 	if Input.is_action_pressed("move_sprint"):
 		if (stamina > 0):
 			stamina -= delta
@@ -45,13 +56,26 @@ func _process(delta):
 			sprinting = false
 			speed = base_speed
 			parts.camera.fov = lerp(parts.camera.fov, camera_fov_extents[0], 10*delta)
+			tired()
+			
+	elif stamina <= max_stamina and regen_stamina:
+		stamina += delta/2
 	
-	elif stamina <= max_stamina:
+	if Input.is_action_just_pressed("move_sprint"):
+		parts.breathing_audio_player.stream = load("res://assets/audio/playerBreathingLoop.mp3")
+		parts.breathing_audio_player.playing = true
+	
+	if Input.is_action_just_released("move_sprint"):
+		parts.breathing_audio_player.stream = load("res://assets/audio/playerBreathing.wav")
+		parts.breathing_audio_player.play()
 		sprinting = false
 		speed = base_speed
-		stamina += delta/2
+		parts.camera.fov = lerp(parts.camera.fov, camera_fov_extents[0], 10*delta)
+		tired()
 		
-	if Input.is_action_pressed("game_pause"):
+	if not ambienceWait: AmbiencePlay()
+	
+	if Input.is_action_just_pressed("game_pause"):
 		world.pause_game()
 		parts.pause.show()
 	
@@ -65,6 +89,12 @@ func _physics_process(delta):
 		velocity.y += jump_velocity
 
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	if Input.is_action_pressed("move_lean"):
+		speed = sneak_speed
+		parts.head.rotation.z = lerp(parts.head.rotation.z, -0.25 * sign(input_dir.x), 0.3)
+		input_dir.x = 0
+	else:
+		parts.head.rotation.z = lerp(parts.head.rotation.z, 0.0, 0.3)
 	var direction = input_dir.normalized().rotated(-parts.head.rotation.y)
 	direction = Vector3(direction.x, 0, direction.y)
 	velocity.x = lerp(velocity.x, direction.x * speed, accel * delta)
@@ -77,7 +107,7 @@ func _physics_process(delta):
 		else:
 			parts.camera_animation.play("head_bob_walk", 0.5)	
 	else:
-		parts.camera_animation.play("reset", 0.5)
+		parts.camera_animation.play("RESET", 0.5)
 
 	move_and_slide()
 
@@ -86,8 +116,13 @@ func _input(event):
 		if !world.paused:
 			parts.head.rotation_degrees.y -= event.relative.x * sensitivity
 			parts.hands.rotation_degrees.y -= event.relative.x * sensitivity
-			parts.head.rotation_degrees.x -= event.relative.y * sensitivity
-			parts.head.rotation.x = clamp(parts.head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+			parts.camera.rotation_degrees.x -= event.relative.y * sensitivity
+			parts.camera.rotation.x = clamp(parts.camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
+func tired():
+	regen_stamina = false
+	await get_tree().create_timer(tired_duration).timeout
+	regen_stamina = true
 
 func _on_pause():
 	pass
@@ -97,6 +132,20 @@ func _on_unpause():
 
 func damage(value):
 	stamina -= value
+	tired()
+	if (stamina < 0): $HUD/GameOver.gameOver()
 	
 func damagePercent(value):
-	stamina -= (value*max_stamina)/100
+	damage((value*max_stamina)/100)
+	
+func getItem():
+	parts.sfx_audio_player.stream = load("res://assets/audio/click.mp3")
+	parts.sfx_audio_player.volume_db = -23
+	parts.sfx_audio_player.play()
+
+func AmbiencePlay():
+	ambienceWait = true
+	await get_tree().create_timer(randf_range(1, 10)).timeout
+	parts.ambience_audio_player.stream = load("res://assets/audio/ambienceWind.mp3")
+	parts.ambience_audio_player.play()
+	ambienceWait = false

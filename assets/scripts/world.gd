@@ -1,6 +1,5 @@
 extends Node3D
 
-
 var paused = false
 
 signal pause
@@ -9,7 +8,7 @@ signal unpause
 
 func _ready():
 	pass
-
+	
 func pause_game():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true #In case you want to pause the game
@@ -27,7 +26,7 @@ func loadMainMenu():
 	unpause.emit()
 	
 func loadScene(path: String):
-	get_tree().change_scene_to_file(path)
+	get_tree().change_scene_to_file("res://assets/scenes/" + path + ".tscn")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
 	unpause.emit()

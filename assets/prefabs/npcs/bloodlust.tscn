@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://wqq2q2i57wfe"]
+
+[ext_resource type="Script" path="res://assets/scripts/PathFinder.gd" id="1_av2fj"]
+[ext_resource type="PackedScene" uid="uid://1i6qrocp34o7" path="res://assets/prefabs/npcs/bloodlustModel.tscn" id="2_qp6vi"]
+[ext_resource type="Script" path="res://assets/scripts/Bloodlust.gd" id="3_vcapu"]
+[ext_resource type="AudioStream" uid="uid://cspkmij53eb5n" path="res://assets/audio/rosnado.mp3" id="4_8d81b"]
+[ext_resource type="AudioStream" uid="uid://cuml0ymtmlsh8" path="res://assets/audio/bufando.mp3" id="4_ti38g"]
+[ext_resource type="AudioStream" uid="uid://edoscigpfhji" path="res://assets/audio/sfx_whoosh_lo02.wav" id="6_yimpp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37xos"]
+size = Vector3(2.5, 3, 2.5)
+
+[node name="Bloodlust" type="CharacterBody3D"]
+script = ExtResource("1_av2fj")
+
+[node name="Bloodlust" parent="." instance=ExtResource("2_qp6vi")]
+
+[node name="Behaviour" type="Node3D" parent="."]
+script = ExtResource("3_vcapu")
+walk_movement_speed = 2.0
+sprint_movement_speed = 4.0
+chase_duration = 4
+listen_radius = 20.0
+patrol_duration = 8
+attack_cooldown = 2.0
+
+[node name="Sight" type="RayCast3D" parent="Behaviour"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+target_position = Vector3(0, 0, 3)
+debug_shape_custom_color = Color(1, 1, 1, 1)
+
+[node name="Area3D" type="Area3D" parent="Behaviour"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Behaviour/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_37xos")
+
+[node name="bufando" type="AudioStreamPlayer3D" parent="Behaviour"]
+stream = ExtResource("4_ti38g")
+unit_size = 2.0
+autoplay = true
+max_distance = 40.0
+bus = &"SFX"
+
+[node name="rugindo" type="AudioStreamPlayer3D" parent="Behaviour"]
+stream = ExtResource("4_8d81b")
+unit_size = 4.0
+max_distance = 50.0
+bus = &"SFX"
+
+[node name="atacando" type="AudioStreamPlayer3D" parent="Behaviour"]
+stream = ExtResource("6_yimpp")
+unit_size = 4.0
+max_distance = 50.0
+bus = &"SFX"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[connection signal="body_entered" from="Behaviour/Area3D" to="Behaviour" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Behaviour/Area3D" to="Behaviour" method="_on_area_3d_body_exited"]

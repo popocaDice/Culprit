@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbpwftt4whx8h"]
+
+[ext_resource type="PackedScene" uid="uid://bq8g30y21jv8m" path="res://assets/models/Scenery/StairsDown.glb" id="1_65o3p"]
+[ext_resource type="PackedScene" uid="uid://d0atopmoawsk8" path="res://assets/prefabs/scenery/wall_dark_bricks.tscn" id="2_1kubd"]
+[ext_resource type="Material" uid="uid://6k70y3lk8afv" path="res://assets/models/Scenery/Floor.tres" id="2_3j8nn"]
+[ext_resource type="Script" path="res://assets/scripts/stairs.gd" id="2_40gk2"]
+[ext_resource type="PackedScene" uid="uid://br7jhywj4wjq6" path="res://assets/prefabs/scenery/wall_dark_bricks_corner.tscn" id="3_67lvj"]
+[ext_resource type="PackedScene" uid="uid://ce86elee1r3gv" path="res://assets/prefabs/scenery/ceiling.tscn" id="6_jmc4b"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8vd10"]
+data = PackedVector3Array(215.384, -0.0001, 184.615, 184.615, -400, 184.615, 215.384, -400, 184.615, 215.384, -0.0001, 184.615, 184.615, -0.0001, 184.615, 184.615, -400, 184.615, 184.615, -0.0001, 153.846, 184.615, -400, 184.615, 184.615, -0.0001, 184.615, 184.615, -0.0001, 153.846, 184.615, -400, 153.846, 184.615, -400, 184.615, 153.846, -0.0001, 153.846, 184.615, -400, 153.846, 184.615, -0.0001, 153.846, 153.846, -0.0001, 153.846, 153.846, -400, 153.846, 184.615, -400, 153.846, 153.846, -0.0001, 123.077, 153.846, -400, 153.846, 153.846, -0.0001, 153.846, 153.846, -0.0001, 123.077, 153.846, -400, 123.077, 153.846, -400, 153.846, 123.077, -0.0001, 123.077, 153.846, -400, 123.077, 153.846, -0.0001, 123.077, 123.077, -0.0001, 123.077, 123.077, -400, 123.077, 153.846, -400, 123.077, 123.077, -0.0001, 92.3077, 123.077, -400, 123.077, 123.077, -0.0001, 123.077, 123.077, -0.0001, 92.3077, 123.077, -400, 92.3076, 123.077, -400, 123.077, 92.3076, -0.0001, 92.3077, 123.077, -400, 92.3076, 123.077, -0.0001, 92.3077, 92.3076, -0.0001, 92.3077, 92.3076, -400, 92.3076, 123.077, -400, 92.3076, 92.3076, -0.0001, 61.5385, 92.3076, -400, 92.3076, 92.3076, -0.0001, 92.3077, 92.3076, -0.0001, 61.5385, 92.3076, -400, 61.5384, 92.3076, -400, 92.3076, 61.5384, -0.0001, 61.5385, 92.3076, -400, 61.5384, 92.3076, -0.0001, 61.5385, 61.5384, -0.0001, 61.5385, 61.5384, -400, 61.5384, 92.3076, -400, 61.5384, 61.5384, -0.0001, 30.7693, 61.5384, -400, 61.5384, 61.5384, -0.0001, 61.5385, 61.5384, -0.0001, 30.7693, 61.5384, -400, 30.7692, 61.5384, -400, 61.5384, 30.7692, -0.0001, 30.7693, 61.5384, -400, 30.7692, 61.5384, -0.0001, 30.7693, 30.7692, -0.0001, 30.7693, 30.7692, -400, 30.7692, 61.5384, -400, 30.7692, 30.7692, -0.0001, 0.0001, 30.7692, -400, 30.7692, 30.7692, -0.0001, 30.7693, 30.7692, -0.0001, 0.0001, 30.7692, -400, 0, 30.7692, -400, 30.7692, 30.7692, -400, 0, 0, -0.0002, 0.0001, 0, -400, 0, 30.7692, -400, 0, 30.7692, -0.0001, 0.0001, 0, -0.0002, 0.0001, 399.999, -0.0001, 369.231, 369.23, -400, 369.23, 399.999, -400, 369.23, 399.999, -0.0001, 369.231, 369.23, -0.0001, 369.23, 369.23, -400, 369.23, 369.23, -0.0001, 338.461, 369.23, -400, 369.23, 369.23, -0.0001, 369.23, 369.23, -0.0001, 338.461, 369.23, -400, 338.461, 369.23, -400, 369.23, 338.461, -0.0001, 338.461, 369.23, -400, 338.461, 369.23, -0.0001, 338.461, 338.461, -0.0001, 338.461, 338.461, -400, 338.461, 369.23, -400, 338.461, 338.461, -0.0002, 307.692, 338.461, -400, 338.461, 338.461, -0.0001, 338.461, 338.461, -0.0002, 307.692, 338.461, -400, 307.692, 338.461, -400, 338.461, 307.692, -0.0002, 307.692, 338.461, -400, 307.692, 338.461, -0.0002, 307.692, 307.692, -0.0002, 307.692, 307.692, -400, 307.692, 338.461, -400, 307.692, 307.692, -0.0002, 276.923, 307.692, -400, 307.692, 307.692, -0.0002, 307.692, 307.692, -0.0002, 276.923, 307.692, -400, 276.923, 307.692, -400, 307.692, 276.922, -0.0002, 276.923, 307.692, -400, 276.923, 307.692, -0.0002, 276.923, 276.922, -0.0002, 276.923, 276.923, -400, 276.923, 307.692, -400, 276.923, 276.922, -0.0001, 246.154, 276.923, -400, 276.923, 276.922, -0.0002, 276.923, 276.922, -0.0001, 246.154, 276.923, -400, 246.154, 276.923, -400, 276.923, 246.153, -0.0001, 246.154, 276.923, -400, 246.154, 276.922, -0.0001, 246.154, 246.153, -0.0001, 246.154, 246.153, -400, 246.154, 276.923, -400, 246.154, 246.153, -0.0002, 215.384, 246.153, -400, 246.154, 246.153, -0.0001, 246.154, 246.153, -0.0002, 215.384, 246.153, -400, 215.384, 246.153, -400, 246.154, 215.384, -0.0002, 215.384, 246.153, -400, 215.384, 246.153, -0.0002, 215.384, 215.384, -0.0002, 215.384, 215.384, -400, 215.384, 246.153, -400, 215.384, 215.384, -0.0001, 184.615, 215.384, -400, 215.384, 215.384, -0.0002, 215.384, 215.384, -0.0001, 184.615, 215.384, -400, 184.615, 215.384, -400, 215.384, 399.999, -400, 369.23, 1000, -0.0001, 369.231, 399.999, -0.0001, 369.231, 399.999, -400, 369.23, 1000, -400, 369.23, 1000, -0.0001, 369.231)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r163n"]
+size = Vector3(2, 6, 4)
+
+[node name="StairsDown" instance=ExtResource("1_65o3p")]
+script = ExtResource("2_40gk2")
+
+[node name="StairsDown2" parent="." index="0"]
+transform = Transform3D(0.0100032, 0, 0, 0, 0, -0.0100032, 0, 0.0100032, 0, 2, 0, 0)
+surface_material_override/1 = ExtResource("2_3j8nn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="StairsDown2" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StairsDown2/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_8vd10")
+
+[node name="Walls" type="Node3D" parent="." index="1"]
+
+[node name="Wall3" parent="Walls" index="0" instance=ExtResource("2_1kubd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, -4, -4)
+
+[node name="Wall4" parent="Walls" index="1" instance=ExtResource("2_1kubd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, -4, 0)
+
+[node name="Wall6" parent="Walls" index="2" instance=ExtResource("2_1kubd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -4, 0)
+
+[node name="Wall7" parent="Walls" index="3" instance=ExtResource("2_1kubd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, -4)
+
+[node name="Wall15" parent="Walls" index="4" instance=ExtResource("2_1kubd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -4, -4)
+
+[node name="Wall9" parent="Walls" index="5" instance=ExtResource("2_1kubd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, -4)
+
+[node name="Wall10" parent="Walls" index="6" instance=ExtResource("2_1kubd")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, 0, -4)
+
+[node name="Wall12" parent="Walls" index="7" instance=ExtResource("2_1kubd")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12, 0, -4)
+
+[node name="Wall8" parent="Walls" index="8" instance=ExtResource("2_1kubd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 0)
+
+[node name="Wall13" parent="Walls" index="9" instance=ExtResource("2_1kubd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, -4, 0)
+
+[node name="Wall14" parent="Walls" index="10" instance=ExtResource("2_1kubd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, 0)
+
+[node name="WallCorner" parent="Walls" index="11" instance=ExtResource("3_67lvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="WallCorner2" parent="Walls" index="12" instance=ExtResource("3_67lvj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="WallCorner3" parent="Walls" index="13" instance=ExtResource("3_67lvj")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 12, -4, -4)
+
+[node name="Ceiling" parent="Walls" index="14" instance=ExtResource("6_jmc4b")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
+shape = SubResource("BoxShape3D_r163n")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

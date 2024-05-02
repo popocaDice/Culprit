@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjcouin8khbbd"]
+
+[ext_resource type="PackedScene" uid="uid://bbcj6ywtnoywj" path="res://assets/models/Scenery/Bars.glb" id="1_e57yo"]
+[ext_resource type="Material" uid="uid://dkrrinx01cbq7" path="res://assets/models/materials/Metal.tres" id="2_5c52n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ndiqa"]
+size = Vector3(20, 400, 400)
+
+[node name="Bars" instance=ExtResource("1_e57yo")]
+
+[node name="Bars2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_5c52n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bars2" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bars2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -200, -200)
+shape = SubResource("BoxShape3D_ndiqa")

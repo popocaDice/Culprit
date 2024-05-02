@@ -1,0 +1,450 @@
+[gd_scene load_steps=15 format=3 uid="uid://2rwfumsr57nv"]
+
+[ext_resource type="Script" path="res://assets/scripts/settings.gd" id="1_i30ps"]
+[ext_resource type="Theme" uid="uid://x6k7y2aew8c4" path="res://assets/themes/baseUITheme.tres" id="1_l37kp"]
+[ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://game_settings/components/slider/slider.tscn" id="2_gmhvn"]
+[ext_resource type="Resource" uid="uid://dc1onac6nlsg5" path="res://game_settings/settings/audio/audio_buses/master.tres" id="5_uteyw"]
+[ext_resource type="Resource" uid="uid://14361erav2ke" path="res://game_settings/settings/audio/audio_buses/music.tres" id="6_f7mkl"]
+[ext_resource type="Resource" uid="uid://bmtaftxhsavyu" path="res://game_settings/settings/audio/audio_buses/sfx.tres" id="7_243wl"]
+[ext_resource type="AudioStream" uid="uid://6d68x27b0s8b" path="res://assets/audio/click.mp3" id="8_gkcyx"]
+[ext_resource type="PackedScene" uid="uid://c764ydkcfktih" path="res://game_settings/components/_misc_components/apply_btn/apply_btn.tscn" id="8_loqdb"]
+[ext_resource type="PackedScene" uid="uid://cha8xesfthpfk" path="res://game_settings/components/switch/switch.tscn" id="8_umvid"]
+[ext_resource type="AudioStream" uid="uid://c1biq2rhaaiwm" path="res://assets/audio/clickCancel.mp3" id="9_ykaim"]
+[ext_resource type="Resource" uid="uid://uvatie4mkao" path="res://game_settings/settings/video/fullscreen.tres" id="10_538yf"]
+[ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://game_settings/components/option_list/option_list.tscn" id="11_2tj4h"]
+[ext_resource type="Resource" uid="uid://s8qt6vwlm52" path="res://game_settings/settings/gameplay/language.tres" id="13_dkjgx"]
+[ext_resource type="Resource" uid="uid://7b8kl8jypl8" path="res://game_settings/settings/video/brightness.tres" id="15_3sv5p"]
+
+[node name="Settings" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l37kp")
+script = ExtResource("1_i30ps")
+
+[node name="Main" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Audio" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -108.0
+offset_right = 64.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "AUDIO_SETTINGS"
+
+[node name="Video" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -43.0
+offset_right = 64.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "VIDEO_SETTINGS"
+
+[node name="Gameplay" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 21.0
+offset_right = 64.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = "GAMEPLAY_SETTINGS"
+
+[node name="Return" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 85.0
+offset_right = 64.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "RETURN_TO_MAIN_MENU"
+text_overrun_behavior = 1
+
+[node name="AudioSettings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Master" type="Label" parent="AudioSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -196.0
+offset_right = 112.0
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MASTER_VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider" parent="AudioSettings/Master" groups=["audio"] instance=ExtResource("2_gmhvn")]
+layout_mode = 0
+offset_top = 39.0
+offset_right = 224.0
+offset_bottom = 79.0
+setting = ExtResource("5_uteyw")
+grab_focus_on_mouse_over = true
+
+[node name="Music" type="Label" parent="AudioSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -84.0
+offset_right = 112.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MUSIC_VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider" parent="AudioSettings/Music" groups=["audio"] instance=ExtResource("2_gmhvn")]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 224.0
+offset_bottom = 80.0
+setting = ExtResource("6_f7mkl")
+grab_focus_on_mouse_over = true
+
+[node name="SFX" type="Label" parent="AudioSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = 20.0
+offset_right = 112.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SFX_VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider" parent="AudioSettings/SFX" instance=ExtResource("2_gmhvn")]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 224.0
+offset_bottom = 88.0
+setting = ExtResource("7_243wl")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Cancel" type="Button" parent="AudioSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = 164.0
+offset_right = 160.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "RETURN_SETTINGS"
+
+[node name="Save" parent="AudioSettings" instance=ExtResource("8_loqdb")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 164.0
+offset_right = -32.0
+offset_bottom = 188.0
+text = "SAVE_SETTINGS"
+group = "audio"
+grab_focus_on_mouse_over = true
+
+[node name="VideoSettings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Save" parent="VideoSettings" instance=ExtResource("8_loqdb")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 164.0
+offset_right = -32.0
+offset_bottom = 188.0
+text = "SAVE_SETTINGS"
+group = "video"
+grab_focus_on_mouse_over = true
+
+[node name="Cancel" type="Button" parent="VideoSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = 164.0
+offset_right = 160.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "RETURN_SETTINGS"
+
+[node name="Fullscreen" type="Label" parent="VideoSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -212.0
+offset_right = -144.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FULLSCREEN_SETTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Switch" parent="VideoSettings/Fullscreen" groups=["video"] instance=ExtResource("8_umvid")]
+layout_mode = 1
+offset_left = -16.0
+offset_right = -152.0
+setting = ExtResource("10_538yf")
+grab_focus_on_mouse_over = true
+
+[node name="Brightness" type="Label" parent="VideoSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -224.0
+offset_right = 89.0
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SCREEN_BRIGHTNESS_SETTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider" parent="VideoSettings/Brightness" groups=["video"] instance=ExtResource("2_gmhvn")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_right = 0.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+setting = ExtResource("15_3sv5p")
+grab_focus_on_mouse_over = true
+
+[node name="Slider" parent="VideoSettings/Brightness/Slider" index="0"]
+min_value = 0.1
+max_value = 3.0
+step = 0.1
+value = 1.0
+
+[node name="Language" type="Label" parent="VideoSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 144.0
+offset_top = -224.0
+offset_right = 288.0
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LANGUAGE_SETTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionList" parent="VideoSettings/Language" instance=ExtResource("11_2tj4h")]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 144.0
+offset_bottom = 63.0
+setting = ExtResource("13_dkjgx")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Btn" parent="VideoSettings/Language/OptionList" index="0"]
+alignment = 1
+item_count = 2
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = "PT_BR_LANGUAGE"
+popup/item_0/id = 0
+popup/item_1/text = "EN_LANGUAGE"
+popup/item_1/id = 1
+
+[node name="GameplaySettings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Forward" type="Label" parent="GameplaySettings"]
+layout_mode = 0
+offset_left = -320.0
+offset_top = -252.0
+offset_right = -128.0
+offset_bottom = -220.0
+text = "FORWARD_INPUT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Backwards" type="Label" parent="GameplaySettings"]
+layout_mode = 0
+offset_left = -320.0
+offset_top = -164.0
+offset_right = -128.0
+offset_bottom = -131.0
+text = "BACKWARD_INPUT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="Label" parent="GameplaySettings"]
+layout_mode = 0
+offset_left = -128.0
+offset_top = -164.0
+offset_right = 64.0
+offset_bottom = -132.0
+text = "RIGHT_INPUT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left" type="Label" parent="GameplaySettings"]
+layout_mode = 0
+offset_left = -512.0
+offset_top = -164.0
+offset_right = -320.0
+offset_bottom = -132.0
+text = "LEFT_INPUT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Save" parent="GameplaySettings" instance=ExtResource("8_loqdb")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -256.0
+offset_top = 156.0
+offset_right = -64.0
+offset_bottom = 204.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "SAVE_SETTINGS"
+group = "audio"
+grab_focus_on_mouse_over = true
+
+[node name="Cancel" type="Button" parent="GameplaySettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = 156.0
+offset_right = 256.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "RETURN_SETTINGS"
+
+[node name="ClickAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_gkcyx")
+bus = &"SFX"
+
+[node name="CancelAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ykaim")
+bus = &"SFX"
+
+[connection signal="pressed" from="Main/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Main/Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="Main/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="AudioSettings/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="AudioSettings/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="VideoSettings/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="VideoSettings/Cancel" to="." method="_on_cancel_pressed"]
+
+[editable path="AudioSettings/Master/Slider"]
+[editable path="AudioSettings/Music/Slider"]
+[editable path="AudioSettings/SFX/Slider"]
+[editable path="VideoSettings/Fullscreen/Switch"]
+[editable path="VideoSettings/Brightness/Slider"]
+[editable path="VideoSettings/Language/OptionList"]

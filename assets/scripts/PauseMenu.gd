@@ -13,11 +13,6 @@ func _ready():
 func _process(_delta):
 	pass
 
-func _input(event):
-	if event.is_action_pressed("game_pause"):
-		hide()
-		world.unpause_game()
-
 
 func on_cancel_pressed():
 	$Settings.hide()
@@ -29,7 +24,6 @@ func on_save_pressed():
 	$Pause.show()
 
 func _on_resume_pressed():
-	print_debug("resume")
 	world.unpause_game()
 	hide()
 
@@ -37,6 +31,7 @@ func _on_resume_pressed():
 func _on_settings_pressed():
 	$Pause.hide()
 	$Settings.show()
+	$ClickAudio.play()
 
 
 func _on_quit_pressed():

@@ -3,27 +3,26 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1cf3rjbvmkcu"
-path.s3tc="res://.godot/imported/Bloodlust_lowerjaw.png-67844c649cc53cb631d61a096433e944.s3tc.ctex"
+path="res://.godot/imported/Bloodlust_lowerjaw.png-67844c649cc53cb631d61a096433e944.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={}
 
 [deps]
 
 source_file="res://assets/textures/Bloodlust_lowerjaw.png"
-dest_files=["res://.godot/imported/Bloodlust_lowerjaw.png-67844c649cc53cb631d61a096433e944.s3tc.ctex"]
+dest_files=["res://.godot/imported/Bloodlust_lowerjaw.png-67844c649cc53cb631d61a096433e944.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

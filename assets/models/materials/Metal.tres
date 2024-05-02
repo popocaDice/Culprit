@@ -1,12 +1,13 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dkrrinx01cbq7"]
 
-[ext_resource type="Texture2D" uid="uid://bkhuumq2xgwep" path="res://assets/models/Door_metal.png" id="1_iqgqs"]
+[ext_resource type="Texture2D" uid="uid://b0aql7xm31v4m" path="res://assets/textures/metal.png" id="1_2hsmn"]
 
 [resource]
 resource_name = "Metal"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_iqgqs")
-metallic = 0.385321
-roughness = 0.585488
-texture_filter = 2
+albedo_texture = ExtResource("1_2hsmn")
+metallic = 0.45
+metallic_specular = 1.0
+roughness = 0.39
+texture_filter = 0

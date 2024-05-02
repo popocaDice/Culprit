@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck8apg051wxyf"]
+
+[ext_resource type="PackedScene" uid="uid://c8xer0ew7dlye" path="res://assets/models/Scenery/BarsCorner.glb" id="1_x478m"]
+[ext_resource type="Material" uid="uid://dkrrinx01cbq7" path="res://assets/models/materials/Metal.tres" id="2_b0677"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lp7q6"]
+data = PackedVector3Array(400, 10, 0, -10.0001, 10.0001, -400, 400, 10, -400, 400, 10, 0, -10, 10, 0, -10.0001, 10.0001, -400, 400, -10, 0, 400, 10, -400, 400, -10, -400, 400, -10, 0, 400, 10, 0, 400, 10, -400, 10, -10, 0, 400, -10, -400, 10, -9.9999, -400, 10, -10, 0, 400, -10, 0, 400, -10, -400, -10, -400, 0, -10.0001, 10.0001, -400, -10, 10, 0, -10, -400, 0, -10.0001, -400, -400, -10.0001, 10.0001, -400, 10, -400, 0, -10.0001, -400, -400, -10, -400, 0, 10, -400, 0, 10, -400, -400, -10.0001, -400, -400, 10, -10, 0, 10, -400, -400, 10, -400, 0, 10, -10, 0, 10, -9.9999, -400, 10, -400, -400)
+
+[node name="BarsCorner" instance=ExtResource("1_x478m")]
+
+[node name="BarsCorner2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_b0677")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BarsCorner2" index="0"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BarsCorner2/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_lp7q6")

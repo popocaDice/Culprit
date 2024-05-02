@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bx455hukbbuol"]
+
+[ext_resource type="Script" path="res://game_settings/templates/display/display_size.gd" id="1_psi1i"]
+
+[resource]
+resource_name = "display_size"
+script = ExtResource("1_psi1i")
+sizes = Array[Vector2]([Vector2(1200, 720)])
+current = 0
+default = 0
+name = "display_size"
+category = "video"
+value_type = 2
+value_hint = 2
+value_hint_string = "1200 x 720"

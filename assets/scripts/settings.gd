@@ -15,11 +15,13 @@ func _process(_delta):
 
 func _on_return_pressed():
 	get_parent().on_cancel_pressed()
+	$CancelAudio.play()
 
 
 func _on_audio_pressed():
 	$Main.hide()
 	$AudioSettings.show()
+	$ClickAudio.play()
 
 
 func _on_cancel_pressed():
@@ -27,3 +29,18 @@ func _on_cancel_pressed():
 	$VideoSettings.hide()
 	$GameplaySettings.hide()
 	$Main.show()
+	$CancelAudio.play()
+
+
+func _on_save_pressed():
+	$AudioSettings.hide()
+	$VideoSettings.hide()
+	$GameplaySettings.hide()
+	$Main.show()
+	$ClickAudio.play()
+
+
+func _on_video_pressed():
+	$Main.hide()
+	$VideoSettings.show()
+	$ClickAudio.play()

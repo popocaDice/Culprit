@@ -1,4 +1,7 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://x6k7y2aew8c4"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://x6k7y2aew8c4"]
+
+[ext_resource type="Texture2D" uid="uid://cg64mt6mux8gx" path="res://assets/textures/UI/checkedToggleButton.png" id="1_p1syw"]
+[ext_resource type="Texture2D" uid="uid://cjxrnial788mh" path="res://assets/textures/UI/uncheckedToggleButton.png" id="2_paaow"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lp35"]
 bg_color = Color(0.145098, 0.0901961, 0.145098, 1)
@@ -28,24 +31,35 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrrbm"]
+bg_color = Color(0.121569, 0, 0.172549, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxp5c"]
+bg_color = Color(0.266667, 0, 0.419608, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_k1lvp"]
 color = Color(0.266667, 0, 0.419608, 1)
 grow_begin = 0.0
 grow_end = 0.0
 thickness = 8
 
-[sub_resource type="Gradient" id="Gradient_ylyqq"]
-offsets = PackedFloat32Array(0, 0.980645, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+[sub_resource type="Gradient" id="Gradient_oj0cv"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_q8uiw"]
-gradient = SubResource("Gradient_ylyqq")
-fill = 2
-fill_from = Vector2(0.5, 0.5)
-metadata/_snap_enabled = true
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ynwpo"]
+gradient = SubResource("Gradient_oj0cv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8eiqu"]
-texture = SubResource("GradientTexture2D_q8uiw")
+texture = SubResource("GradientTexture1D_ynwpo")
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -53,10 +67,15 @@ Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
 Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
 Button/colors/font_outline_color = Color(1, 1, 1, 1)
 Button/colors/font_pressed_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 16
+Button/font_sizes/font_size = 12
 Button/styles/focus = SubResource("StyleBoxFlat_4lp35")
 Button/styles/hover = SubResource("StyleBoxFlat_78iiy")
 Button/styles/normal = SubResource("StyleBoxFlat_v8fsa")
 Button/styles/pressed = SubResource("StyleBoxFlat_bhsum")
+CheckButton/icons/checked = ExtResource("1_p1syw")
+CheckButton/icons/unchecked = ExtResource("2_paaow")
+CheckButton/styles/normal = SubResource("StyleBoxFlat_jrrbm")
+CheckButton/styles/pressed = SubResource("StyleBoxFlat_bxp5c")
 HSlider/styles/slider = SubResource("StyleBoxLine_k1lvp")
+Label/font_sizes/font_size = 12
 Panel/styles/panel = SubResource("StyleBoxTexture_8eiqu")

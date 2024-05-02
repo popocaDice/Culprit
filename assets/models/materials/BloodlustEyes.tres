@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c73nhio7q2mqe"]
+
+[ext_resource type="Texture2D" uid="uid://csugu23uji7ph" path="res://assets/models/Characters/Bloodlust_eye.png" id="1_ckbwk"]
+[ext_resource type="Texture2D" uid="uid://c6btnr12wpdah" path="res://assets/textures/Bloodlust_eye.png" id="2_613uw"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ckbwk")
+roughness = 0.5
+emission_enabled = true
+emission_texture = ExtResource("2_613uw")
+texture_filter = 0

@@ -1,0 +1,703 @@
+[gd_scene load_steps=4 format=3 uid="uid://do78l80g8g4i8"]
+
+[ext_resource type="Theme" uid="uid://ioqq48hcetow" path="res://assets/themes/inventoryUITheme.tres" id="1_bphio"]
+[ext_resource type="Script" path="res://assets/scripts/UI/Inventory/inventory.gd" id="2_7jjd5"]
+[ext_resource type="Script" path="res://assets/prefabs/UI/inventory/InventorySlot.gd" id="2_eibcr"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bphio")
+script = ExtResource("2_7jjd5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryGrid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 448.0
+columns = 16
+
+[node name="InventorySpace1" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace2" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace3" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace4" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace5" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace6" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace7" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace8" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace9" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace10" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace11" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace12" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace13" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace14" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace15" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace16" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace17" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace18" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace19" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace20" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace21" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace22" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace23" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace24" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace25" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace26" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace27" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace28" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace29" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace30" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace31" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace32" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace33" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace34" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace35" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace36" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace37" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace38" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace39" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace40" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace41" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace42" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace43" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace44" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace45" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace46" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace47" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace48" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace49" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace50" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace51" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace52" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace53" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace54" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace55" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace56" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace57" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace58" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace59" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace60" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace61" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace62" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace63" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace64" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace65" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace66" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace67" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace68" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace69" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace70" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace71" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace72" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace73" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace74" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace75" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace76" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace77" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace78" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace79" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace80" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace81" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace82" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace83" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace84" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace85" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace86" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace87" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace88" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace89" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace90" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace91" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace92" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace93" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace94" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace95" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="InventorySpace96" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")

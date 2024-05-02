@@ -14,4 +14,4 @@ dest_files=["res://assets/translations/CULPRIT-TRANSLATION.en.translation", "res
 [params]
 
 compress=true
-delimiter=0
+delimiter=2

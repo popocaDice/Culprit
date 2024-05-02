@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce86elee1r3gv"]
+
+[ext_resource type="Material" uid="uid://1gqreek77wqt" path="res://assets/models/materials/Ceiling.tres" id="1_7x85c"]
+[ext_resource type="Script" path="res://assets/scripts/floorCeiling.gd" id="1_e5j48"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_61j05"]
+resource_local_to_scene = true
+size = Vector2(4, 4)
+
+[node name="Ceiling" type="Node3D"]
+script = ExtResource("1_e5j48")
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("PlaneMesh_61j05")
+surface_material_override/0 = ExtResource("1_7x85c")

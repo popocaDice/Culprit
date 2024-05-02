@@ -1,0 +1,192 @@
+[gd_scene load_steps=12 format=3 uid="uid://bq31g2ooisgl"]
+
+[ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_gjpai"]
+[ext_resource type="Texture2D" uid="uid://cym14fyxq43yi" path="res://assets/textures/TITLE.png" id="2_afp6o"]
+[ext_resource type="Script" path="res://assets/scripts/Credits.gd" id="2_cbkof"]
+[ext_resource type="AudioStream" uid="uid://dr340nsqw2m4b" path="res://assets/audio/torchLoop.wav" id="4_3yk8s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0i2s"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7t6sq"]
+lifetime_randomness = 0.09
+emission_shape = 1
+emission_sphere_radius = 127.38
+particle_flag_disable_z = true
+direction = Vector3(-1, 0.3, 0)
+spread = 30.0
+gravity = Vector3(-5, -1, 0)
+initial_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 2.0
+scale_max = 10.0
+color = Color(0.811765, 0.74902, 1, 1)
+turbulence_noise_strength = 2.47
+attractor_interaction_enabled = false
+
+[sub_resource type="Gradient" id="Gradient_byotx"]
+offsets = PackedFloat32Array(0, 0.632258, 0.909677, 1)
+colors = PackedColorArray(1, 1, 1, 0.0117647, 1, 1, 1, 0.0117647, 1, 1, 1, 0.00784314, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ndwxa"]
+gradient = SubResource("Gradient_byotx")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9, 0.1)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_gamm3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(288, 456)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-576, -328)]
+}
+
+[sub_resource type="Animation" id="Animation_vqc0h"]
+resource_name = "fade_in"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(288, 672), Vector2(288, 672), Vector2(288, 456)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-576, -328), Vector2(-576, -328), Vector2(-576, -2650)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_70ood"]
+_data = {
+"RESET": SubResource("Animation_gamm3"),
+"fade_in": SubResource("Animation_vqc0h")
+}
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_gjpai")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Credits" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_cbkof")
+
+[node name="Panel" type="Panel" parent="Camera2D/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -320.0
+offset_right = 576.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0i2s")
+
+[node name="Smoke" type="GPUParticles2D" parent="Camera2D/Credits/Panel"]
+position = Vector2(1192, 664)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_7t6sq")
+texture = SubResource("GradientTexture2D_ndwxa")
+lifetime = 30.0
+preprocess = 200.0
+
+[node name="Container" type="Control" parent="Camera2D/Credits"]
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -328.0
+offset_right = -576.0
+offset_bottom = -328.0
+
+[node name="Title" type="Sprite2D" parent="Camera2D/Credits/Container"]
+position = Vector2(576, 312)
+scale = Vector2(0.815152, 0.815152)
+texture = ExtResource("2_afp6o")
+
+[node name="Label" type="Label" parent="Camera2D/Credits/Container"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 456.0
+offset_right = 864.0
+offset_bottom = 663.999
+text = "THANKS_4_PLAYING"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/Credits/Container"]
+autoplay = "fade_in"
+libraries = {
+"": SubResource("AnimationLibrary_70ood")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3yk8s")
+autoplay = true
+bus = &"Music"

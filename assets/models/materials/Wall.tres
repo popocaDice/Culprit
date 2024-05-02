@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dkfwekrhr7gou" path="res://assets/textures/wall.png" id="1_2dah1"]
 
 [resource]
+resource_local_to_scene = true
 resource_name = "Wall"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_2dah1")
-roughness = 0.6
-texture_filter = 2
+texture_filter = 0

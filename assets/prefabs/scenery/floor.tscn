@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://crciw211su8px"]
+
+[ext_resource type="Script" path="res://assets/scripts/floorCeiling.gd" id="1_1fjah"]
+[ext_resource type="Material" uid="uid://c08ak071gwrft" path="res://assets/models/materials/Floor.tres" id="1_3dnga"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vkduu"]
+resource_local_to_scene = true
+size = Vector2(4, 4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_q0j8v"]
+data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
+
+[node name="Floor" type="Node3D"]
+script = ExtResource("1_1fjah")
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_vkduu")
+surface_material_override/0 = ExtResource("1_3dnga")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q0j8v")

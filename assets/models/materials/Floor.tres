@@ -3,10 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dsdfrefcr4lla" path="res://assets/textures/floor.png" id="1_spqqm"]
 
 [resource]
+resource_local_to_scene = true
 resource_name = "Floor"
 cull_mode = 2
-vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_spqqm")
-roughness = 0.0
-uv1_scale = Vector3(50, 50, 50)
-texture_filter = 2
+texture_filter = 0
