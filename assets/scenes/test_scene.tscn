@@ -146,4 +146,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 0, 
 [node name="CoalStick" parent="Items" instance=ExtResource("8_tqrt3")]
 
 [node name="Culprit" parent="." instance=ExtResource("10_x3w6v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, -10)
+spawnRangeScale = [3, 8]
+spawnRangeOffset = [0, -2]

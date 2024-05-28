@@ -1,11 +1,9 @@
 extends Control
 
-@onready var world
+@onready var world = get_node("/root/World")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
-	world = get_node("/root/World")
 	pass # Replace with function body.
 
 

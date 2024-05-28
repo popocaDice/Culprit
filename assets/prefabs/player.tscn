@@ -1,9 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://cv6gavjrsud3r"]
+[gd_scene load_steps=28 format=3 uid="uid://cv6gavjrsud3r"]
 
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_51v1g"]
 [ext_resource type="PackedScene" uid="uid://cv71drfsq2pde" path="res://assets/models/Characters/maphands.glb" id="2_meu4y"]
 [ext_resource type="Script" path="res://assets/scripts/StaminaBar.gd" id="2_o8xbn"]
-[ext_resource type="CameraAttributesPractical" uid="uid://bhe2btpx0pgtr" path="res://assets/prefabs/cameraSettings.tres" id="2_wgbme"]
+[ext_resource type="CameraAttributesPractical" uid="uid://jt6htmqvcxwo" path="res://assets/prefabs/cameraSettings.tres" id="2_wgbme"]
 [ext_resource type="Script" path="res://assets/scripts/PauseMenu.gd" id="3_lntdj"]
 [ext_resource type="Theme" uid="uid://x6k7y2aew8c4" path="res://assets/themes/baseUITheme.tres" id="4_ow1mb"]
 [ext_resource type="PackedScene" uid="uid://2rwfumsr57nv" path="res://assets/prefabs/UI/settings.tscn" id="5_xjnw5"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://rxg458d6g1nh" path="res://assets/audio/playerBreathing.wav" id="9_5fks7"]
 [ext_resource type="AudioStream" uid="uid://6d68x27b0s8b" path="res://assets/audio/click.mp3" id="10_q8bhx"]
 [ext_resource type="PackedScene" uid="uid://do78l80g8g4i8" path="res://assets/prefabs/UI/inventory.tscn" id="11_l8ups"]
+[ext_resource type="PackedScene" uid="uid://bgaxxesq6smtj" path="res://assets/prefabs/UI/dialogue_window.tscn" id="12_i5uhd"]
 [ext_resource type="AudioStream" uid="uid://bxgw6rrcuss3q" path="res://assets/audio/ambienceWind.mp3" id="13_xs2e7"]
 
 [sub_resource type="Animation" id="Animation_lky77"]
@@ -175,7 +176,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ltwe"]
 size = Vector3(1, 2, 1)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 process_mode = 1
 floor_constant_speed = true
 script = ExtResource("1_51v1g")
@@ -303,6 +304,33 @@ offset_top = -328.0
 offset_right = 576.0
 offset_bottom = 328.0
 metadata/_edit_use_anchors_ = true
+
+[node name="InteractionHint" type="Control" parent="HUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/InteractionHint"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 56.0
+offset_right = 16.0
+offset_bottom = 88.0
+theme = ExtResource("4_ow1mb")
+
+[node name="Label" type="Label" parent="HUD/InteractionHint/PanelContainer"]
+layout_mode = 2
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogueWindow" parent="HUD" instance=ExtResource("12_i5uhd")]
 
 [node name="InteractionBox" type="Area3D" parent="."]
 

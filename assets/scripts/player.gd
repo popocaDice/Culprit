@@ -15,6 +15,7 @@ var speed = base_speed
 var sprinting = false
 var camera_fov_extents = [75.0, 85.0] #index 0 is normal, index 1 is sprinting
 
+var locked_controls = false
 
 @onready var parts = {
 	"head": $Head,
@@ -25,7 +26,8 @@ var camera_fov_extents = [75.0, 85.0] #index 0 is normal, index 1 is sprinting
 	"breathing_audio_player": $Breathing,
 	"sfx_audio_player": $SFX,
 	"ambience_audio_player": $Ambience,
-	"pause": $HUD/PauseMenu
+	"pause": $HUD/PauseMenu,
+	"dialogue": $HUD/DialogueWindow
 }
 @onready var world = get_parent()
 
@@ -42,6 +44,14 @@ func _ready():
 	parts.stamina_bar.max_value = max_stamina
 
 func _process(delta):
+	
+	if Input.is_action_just_pressed("game_pause"):
+		world.pause_game()
+		parts.pause.show()
+	
+	if not ambienceWait: AmbiencePlay()
+	
+	if locked_controls: return
 	
 	speed = base_speed
 	
@@ -72,16 +82,12 @@ func _process(delta):
 		speed = base_speed
 		parts.camera.fov = lerp(parts.camera.fov, camera_fov_extents[0], 10*delta)
 		tired()
-		
-	if not ambienceWait: AmbiencePlay()
-	
-	if Input.is_action_just_pressed("game_pause"):
-		world.pause_game()
-		parts.pause.show()
 	
 	parts.stamina_bar.setValue(stamina)
 
 func _physics_process(delta):
+	if locked_controls: return
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -112,6 +118,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
+	if locked_controls: return
 	if event is InputEventMouseMotion:
 		if !world.paused:
 			parts.head.rotation_degrees.y -= event.relative.x * sensitivity
@@ -149,3 +156,18 @@ func AmbiencePlay():
 	parts.ambience_audio_player.stream = load("res://assets/audio/ambienceWind.mp3")
 	parts.ambience_audio_player.play()
 	ambienceWait = false
+	
+func HintInteract(show):
+	$HUD/InteractionHint.visible = show
+	
+func OpenDialogue():
+	LockControls(true)
+	parts.dialogue.visible = true
+	
+func CloseDialogue():
+	LockControls(false)
+	parts.dialogue.visible = false
+	
+func LockControls(state):
+	locked_controls = state
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if state else Input.MOUSE_MODE_CAPTURED)

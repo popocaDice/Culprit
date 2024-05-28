@@ -4,6 +4,8 @@ var paused = false
 
 signal pause
 signal unpause
+signal lockControls
+signal unlockControls
 
 
 func _ready():
@@ -18,6 +20,14 @@ func unpause_game():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
 	unpause.emit()
+
+func lock_controls(showCursor):
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if showCursor else Input.MOUSE_MODE_CAPTURED)
+	lockControls.emit()
+
+func unlock_controls():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	unlockControls.emit()
 
 func loadMainMenu():
 	get_tree().change_scene_to_file("res://assets/scenes/mainMenu.tscn")
