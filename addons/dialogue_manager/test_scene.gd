@@ -22,6 +22,10 @@ func _ready():
 
 func _enter_tree() -> void:
 	DialogueSettings.set_user_value("is_running_test_scene", false)
+	
+
+func lockPlayerControls(value):
+	pass
 
 
 ### Signals

@@ -1,6 +1,7 @@
 extends Node3D
 
 var paused = false
+@onready var player = get_tree().get_first_node_in_group("player")
 
 signal pause
 signal unpause
@@ -40,6 +41,9 @@ func loadScene(path: String):
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
 	unpause.emit()
+
+func lockPlayerControls(lock):
+	player.LockControls(lock)
 
 func _process(_delta):
 	if Input.is_action_just_released("game_pause"):

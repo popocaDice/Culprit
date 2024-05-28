@@ -1,8 +1,12 @@
 @tool
 extends Node3D
 
-@export var spawnRangeScale = [1,1]
-@export var spawnRangeOffset = [0,0]
+@export var dialogue_resource: DialogueResource
+@export var dialogue_start: String = "start"
+const Balloon = preload("res://assets/dialogue/balloon.tscn")
+
+@export var spawnRangeScale = [1.5,1.5]
+@export var spawnRangeOffset = [0.5,0.5]
 var spawnRangeScaleY = 4
 var spawnRangeOffsetY = 2
 
@@ -36,7 +40,9 @@ func _process(_delta):
 		var target_rotation = global_transform.basis.get_rotation_quaternion()
 		rotation = prev_rotation.slerp(target_rotation, turnVelocity).get_euler()
 		if Input.is_action_just_pressed("interact"):
-			player.OpenDialogue()
+			var balloon: Node = Balloon.instantiate()
+			get_tree().current_scene.add_child(balloon)
+			balloon.start(dialogue_resource, dialogue_start)
 		
 
 
@@ -61,4 +67,3 @@ func _on_interaction_range_area_exited(area):
 	if area.get_parent_node_3d().is_in_group("player"):
 		area.get_parent_node_3d().HintInteract(false)
 		playerInRangeDialogue = false
-		player.CloseDialogue()

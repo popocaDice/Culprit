@@ -26,10 +26,9 @@ var locked_controls = false
 	"breathing_audio_player": $Breathing,
 	"sfx_audio_player": $SFX,
 	"ambience_audio_player": $Ambience,
-	"pause": $HUD/PauseMenu,
-	"dialogue": $HUD/DialogueWindow
+	"pause": $HUD/PauseMenu
 }
-@onready var world = get_parent()
+@onready var world = get_tree().current_scene
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -160,13 +159,6 @@ func AmbiencePlay():
 func HintInteract(show):
 	$HUD/InteractionHint.visible = show
 	
-func OpenDialogue():
-	LockControls(true)
-	parts.dialogue.visible = true
-	
-func CloseDialogue():
-	LockControls(false)
-	parts.dialogue.visible = false
 	
 func LockControls(state):
 	locked_controls = state

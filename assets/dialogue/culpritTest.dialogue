@@ -1,12 +1,10 @@
-~ this_is_a_node_title
+~ start
 
-Stranger: Oh my, how'd this weird lil thing get here? \n[wait=0.5] Oy, thingy, do you talk?
-- Goo goo
-	Stranger: Hah, guess not.
-- Ga ga
-	Stranger: Guess not.
-- Start again => this_is_a_node_title
-- End the conversation => END
+Stranger: [speed=0.5]My my, how'd this weird lil thing get here? [wait=0.7]\n[shake rate=20 level=10]OY[/shake],[wait=0.3] thingy,[wait=0.3] can you speak?
+- goo goo?
+	Stranger: Hah. Guess not.
+- ga ga
+	Stranger: Guess not[speed=0.2][wave amp=20 freq=3]...[/wave][wait=1][next=auto]
 Culprit: For more information see the online documentation.
 
 => END
