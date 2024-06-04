@@ -701,3 +701,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
 script = ExtResource("2_eibcr")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 16.0
+offset_right = 1141.0
+offset_bottom = 47.0
+text = "X"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

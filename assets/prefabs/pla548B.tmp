@@ -180,6 +180,13 @@ process_mode = 1
 floor_constant_speed = true
 script = ExtResource("1_51v1g")
 base_speed = 3
+sprint_speed = null
+sneak_speed = null
+jump_velocity = null
+sensitivity = null
+accel = null
+max_stamina = null
+tired_duration = null
 
 [node name="Head" type="Node3D" parent="."]
 
@@ -295,9 +302,7 @@ text = "QUIT_TO_MAIN_MENU"
 layout_mode = 1
 
 [node name="Timer" type="Timer" parent="HUD/PauseMenu"]
-process_mode = 3
 wait_time = 0.1
-one_shot = true
 
 [node name="GameOver" parent="HUD" instance=ExtResource("7_lbw22")]
 
@@ -366,4 +371,3 @@ max_polyphony = 10
 [connection signal="pressed" from="HUD/PauseMenu/Pause/Resume" to="HUD/PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="HUD/PauseMenu/Pause/Settings" to="HUD/PauseMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="HUD/PauseMenu/Pause/Quit" to="HUD/PauseMenu" method="_on_quit_pressed"]
-[connection signal="timeout" from="HUD/PauseMenu/Timer" to="HUD/PauseMenu" method="_on_timer_timeout"]

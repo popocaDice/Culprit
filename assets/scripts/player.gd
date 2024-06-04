@@ -26,14 +26,14 @@ var locked_controls = false
 	"breathing_audio_player": $Breathing,
 	"sfx_audio_player": $SFX,
 	"ambience_audio_player": $Ambience,
-	"pause": $HUD/PauseMenu
+	"pause": $HUD/PauseMenu,
+	"inventory": $HUD/Inventory
 }
 @onready var world = get_tree().current_scene
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var ambienceWait: bool = false
-
 
 func _ready():
 	world.pause.connect(_on_pause)
@@ -45,8 +45,16 @@ func _ready():
 func _process(delta):
 	
 	if Input.is_action_just_pressed("game_pause"):
+		if not parts.pause.timer_stopped: return
+		parts.pause.timer(0.1)
 		world.pause_game()
 		parts.pause.show()
+	
+	if Input.is_action_just_pressed("inventory"):
+		if not parts.inventory.timer_stopped: return
+		parts.inventory.timer(0.1)
+		world.pause_game()
+		parts.inventory.show()
 	
 	if not ambienceWait: AmbiencePlay()
 	
@@ -144,10 +152,12 @@ func damage(value):
 func damagePercent(value):
 	damage((value*max_stamina)/100)
 	
-func getItem():
+func getItem(id):
 	parts.sfx_audio_player.stream = load("res://assets/audio/click.mp3")
 	parts.sfx_audio_player.volume_db = -23
 	parts.sfx_audio_player.play()
+	parts.inventory.addItem(id)
+	
 
 func AmbiencePlay():
 	ambienceWait = true
@@ -158,7 +168,6 @@ func AmbiencePlay():
 	
 func HintInteract(show):
 	$HUD/InteractionHint.visible = show
-	
 	
 func LockControls(state):
 	locked_controls = state

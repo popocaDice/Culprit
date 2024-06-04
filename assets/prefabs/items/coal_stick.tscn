@@ -70,15 +70,16 @@ size = Vector3(1, 2, 1)
 [node name="CoalStick" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 script = ExtResource("1_2q5ry")
+item = "coal"
 
 [node name="Mesh" parent="." instance=ExtResource("2_86gea")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 1, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Mesh"]
-autoplay = "float"
 libraries = {
 "": SubResource("AnimationLibrary_huqof")
 }
+autoplay = "float"
 
 [node name="Area3D" type="Area3D" parent="."]
 

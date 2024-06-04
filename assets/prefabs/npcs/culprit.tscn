@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://bsmn03cff873c" path="res://assets/models/Characters/Culprit.glb" id="1_7b6bo"]
 [ext_resource type="Script" path="res://assets/scripts/NPCS/culprit.gd" id="2_r5e0i"]
 [ext_resource type="Shader" path="res://assets/shaders/ghostBody.gdshader" id="2_tga2q"]
-[ext_resource type="Texture2D" uid="uid://byxh254b2u3tg" path="res://assets/models/Characters/Culprit_texture.png" id="2_u3rq5"]
 [ext_resource type="Shader" path="res://assets/shaders/ghostBodyTextured.gdshader" id="3_j5yvx"]
+[ext_resource type="Texture2D" uid="uid://c2xwwtfe3ibg1" path="res://assets/textures/culpritFace.png" id="5_uyvj1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o06hh"]
 render_priority = 0
 shader = ExtResource("2_tga2q")
-shader_parameter/albedo = Color(0.227451, 0.521569, 0.631373, 1)
+shader_parameter/albedo = Color(0.0859178, 0.244882, 0.303538, 1)
 shader_parameter/emission_color = Color(0.227451, 0.521569, 0.631373, 1)
 shader_parameter/emission_amount = 1.0
 shader_parameter/rim_limit = 0.392
@@ -18,7 +18,7 @@ shader_parameter/rim_steepness = 0.273
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_77uri"]
 render_priority = 0
 shader = ExtResource("3_j5yvx")
-shader_parameter/albedo = Color(0.227451, 0.521569, 0.631373, 1)
+shader_parameter/albedo = null
 shader_parameter/emission_color = Color(0.227451, 0.521569, 0.631373, 1)
 shader_parameter/emission_amount = 1.0
 shader_parameter/alpha_limit = 1.0
@@ -26,7 +26,7 @@ shader_parameter/rim_limit = 0.392
 shader_parameter/rim_steepness = 0.273
 shader_parameter/uv_scale = Vector3(1, 1, 1)
 shader_parameter/uv_offset = null
-shader_parameter/texture_albedo = ExtResource("2_u3rq5")
+shader_parameter/texture_albedo = ExtResource("5_uyvj1")
 
 [sub_resource type="Gradient" id="Gradient_82ccg"]
 colors = PackedColorArray(0.103109, 0.235558, 0.284981, 1, 0.360784, 0.635294, 0.741176, 0.137255)
@@ -124,7 +124,7 @@ states/leave/node = SubResource("AnimationNodeAnimation_d2x52")
 states/leave/position = Vector2(719, 206)
 transitions = ["appear", "idle", SubResource("AnimationNodeStateMachineTransition_ly2kr"), "idle", "leave", SubResource("AnimationNodeStateMachineTransition_cvphd"), "Start", "hide", SubResource("AnimationNodeStateMachineTransition_3bja8"), "hide", "appear", SubResource("AnimationNodeStateMachineTransition_vicun"), "leave", "hide", SubResource("AnimationNodeStateMachineTransition_1ykpc")]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tw4tj"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xoa33"]
 size = Vector3(1.5, 4, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rynby"]
@@ -132,7 +132,6 @@ size = Vector3(3, 4, 3)
 
 [node name="Culprit" instance=ExtResource("1_7b6bo")]
 script = ExtResource("2_r5e0i")
-dialogue_start = null
 turnVelocity = 0.1
 
 [node name="Armature" parent="." index="0"]
@@ -209,7 +208,7 @@ parameters/conditions/playerInRange = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnRange" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 0.5)
-shape = SubResource("BoxShape3D_tw4tj")
+shape = SubResource("BoxShape3D_xoa33")
 
 [node name="InteractionRange" type="Area3D" parent="." index="4"]
 

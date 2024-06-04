@@ -6,6 +6,14 @@ var slots = []
 var slotSizePixels
 var gridPosition
 
+var timer_stopped = true
+
+@onready var items = {
+	"coal": load("res://assets/prefabs/UI/inventory/test_item_icon.tscn"),
+}
+
+@onready var world = get_node("/root/World")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -17,12 +25,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-#	 if Input.is_action_just_pressed("move_jump"):
-#		addItem(load("res://assets/prefabs/UI/inventory/test_item_icon.tscn"))
-#		
-#	if (Input.is_action_just_pressed("move_forward")):
-#		addItem(load("res://assets/prefabs/UI/inventory/test_item_red_icon.tscn"))
-	pass
+	if not timer_stopped:
+		return
+	if Input.is_action_just_pressed("game_pause"):
+		timer(0.1)
+		timer_stopped = false
+		_on_button_pressed()
 
 func moveItem(pickIndex, targetPosition):
 	var targetGridPosition = Vector2(int((targetPosition.x-gridPosition.x)/slotSizePixels), int((targetPosition.y-gridPosition.y)/slotSizePixels))
@@ -45,12 +53,35 @@ func updateInventory():
 		elif inventory[index] != null: 
 			slots[index].add_child(inventory[index])
 
-func addItem(itemNode):
-	if (itemNode.instantiate().stackable):
-		for item in inventory:
-			print_debug(item.name())
-			if item.get_name() == itemNode.instantiate().get_name():
-				item.Collect(1)
+func addItem(id):
+	var item = items[id].instantiate()
+	if item.stackable:
+		for i in inventory:
+			if i[0] == id:
+				i[1] += 1
+				print_debug("add item")
 				return
-	inventory.append(itemNode.instantiate())
-	updateInventory()
+	inventory.append([id, 1])
+	print_debug("new item")
+	#if (itemNode.instantiate().stackable):
+	#	for item in inventory:
+	#		print_debug(item.name())
+	#		if item.get_name() == itemNode.instantiate().get_name():
+	#			item.Collect(1)
+	#			return
+	#inventory.append(itemNode.instantiate())
+	#updateInventory()
+
+
+func _on_button_pressed():
+	timer(0.1)
+	timer_stopped = false
+	world.unpause_game()
+	hide()
+
+
+func _on_timer_timeout():
+	timer_stopped = true
+	
+func timer(time):
+	$Timer.start(time)
