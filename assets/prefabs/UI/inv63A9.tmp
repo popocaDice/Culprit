@@ -1,0 +1,905 @@
+[gd_scene load_steps=4 format=3 uid="uid://do78l80g8g4i8"]
+
+[ext_resource type="Theme" uid="uid://ioqq48hcetow" path="res://assets/themes/inventoryUITheme.tres" id="1_bphio"]
+[ext_resource type="Script" path="res://assets/prefabs/UI/inventory/InventorySlot.gd" id="2_eibcr"]
+[ext_resource type="Script" path="res://assets/scripts/UI/Inventory/inventoryUI.gd" id="2_q6wc5"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bphio")
+script = ExtResource("2_q6wc5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryGrid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 448.0
+columns = 16
+
+[node name="InventorySpace1" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace1"]
+
+[node name="InventorySpace2" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace2"]
+
+[node name="InventorySpace3" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace3"]
+
+[node name="InventorySpace4" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace4"]
+
+[node name="InventorySpace5" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace5"]
+
+[node name="InventorySpace6" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace6"]
+
+[node name="InventorySpace7" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace7"]
+
+[node name="InventorySpace8" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace8"]
+
+[node name="InventorySpace9" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace9"]
+
+[node name="InventorySpace10" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace10"]
+
+[node name="InventorySpace11" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace11"]
+
+[node name="InventorySpace12" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace12"]
+
+[node name="InventorySpace13" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace13"]
+
+[node name="InventorySpace14" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace14"]
+
+[node name="InventorySpace15" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace15"]
+
+[node name="InventorySpace16" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace16"]
+
+[node name="InventorySpace17" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace17"]
+
+[node name="InventorySpace18" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace18"]
+
+[node name="InventorySpace19" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace19"]
+
+[node name="InventorySpace20" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace20"]
+
+[node name="InventorySpace21" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace21"]
+
+[node name="InventorySpace22" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace22"]
+
+[node name="InventorySpace23" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace23"]
+
+[node name="InventorySpace24" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace24"]
+
+[node name="InventorySpace25" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace25"]
+
+[node name="InventorySpace26" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace26"]
+
+[node name="InventorySpace27" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace27"]
+
+[node name="InventorySpace28" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace28"]
+
+[node name="InventorySpace29" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace29"]
+
+[node name="InventorySpace30" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace30"]
+
+[node name="InventorySpace31" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace31"]
+
+[node name="InventorySpace32" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace32"]
+
+[node name="InventorySpace33" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace33"]
+
+[node name="InventorySpace34" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace34"]
+
+[node name="InventorySpace35" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace35"]
+
+[node name="InventorySpace36" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace36"]
+
+[node name="InventorySpace37" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace37"]
+
+[node name="InventorySpace38" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace38"]
+
+[node name="InventorySpace39" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace39"]
+
+[node name="InventorySpace40" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace40"]
+
+[node name="InventorySpace41" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace41"]
+
+[node name="InventorySpace42" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace42"]
+
+[node name="InventorySpace43" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace43"]
+
+[node name="InventorySpace44" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace44"]
+
+[node name="InventorySpace45" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace45"]
+
+[node name="InventorySpace46" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace46"]
+
+[node name="InventorySpace47" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace47"]
+
+[node name="InventorySpace48" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace48"]
+
+[node name="InventorySpace49" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace49"]
+
+[node name="InventorySpace50" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace50"]
+
+[node name="InventorySpace51" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace51"]
+
+[node name="InventorySpace52" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace52"]
+
+[node name="InventorySpace53" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace53"]
+
+[node name="InventorySpace54" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace54"]
+
+[node name="InventorySpace55" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace55"]
+
+[node name="InventorySpace56" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace56"]
+
+[node name="InventorySpace57" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace57"]
+
+[node name="InventorySpace58" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace58"]
+
+[node name="InventorySpace59" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace59"]
+
+[node name="InventorySpace60" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace60"]
+
+[node name="InventorySpace61" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace61"]
+
+[node name="InventorySpace62" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace62"]
+
+[node name="InventorySpace63" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace63"]
+
+[node name="InventorySpace64" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace64"]
+
+[node name="InventorySpace65" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace65"]
+
+[node name="InventorySpace66" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace66"]
+
+[node name="InventorySpace67" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace67"]
+
+[node name="InventorySpace68" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace68"]
+
+[node name="InventorySpace69" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace69"]
+
+[node name="InventorySpace70" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace70"]
+
+[node name="InventorySpace71" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace71"]
+
+[node name="InventorySpace72" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace72"]
+
+[node name="InventorySpace73" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace73"]
+
+[node name="InventorySpace74" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace74"]
+
+[node name="InventorySpace75" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace75"]
+
+[node name="InventorySpace76" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace76"]
+
+[node name="InventorySpace77" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace77"]
+
+[node name="InventorySpace78" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace78"]
+
+[node name="InventorySpace79" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace79"]
+
+[node name="InventorySpace80" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace80"]
+
+[node name="InventorySpace81" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace81"]
+
+[node name="InventorySpace82" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace82"]
+
+[node name="InventorySpace83" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace83"]
+
+[node name="InventorySpace84" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace84"]
+
+[node name="InventorySpace85" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace85"]
+
+[node name="InventorySpace86" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace86"]
+
+[node name="InventorySpace87" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace87"]
+
+[node name="InventorySpace88" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace88"]
+
+[node name="InventorySpace89" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace89"]
+
+[node name="InventorySpace90" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace90"]
+
+[node name="InventorySpace91" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace91"]
+
+[node name="InventorySpace92" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace92"]
+
+[node name="InventorySpace93" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace93"]
+
+[node name="InventorySpace94" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace94"]
+
+[node name="InventorySpace95" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace95"]
+
+[node name="InventorySpace96" type="PanelContainer" parent="InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_eibcr")
+
+[node name="ItemDisplay" type="MeshInstance3D" parent="InventoryGrid/InventorySpace96"]
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 16.0
+offset_right = 1141.0
+offset_bottom = 47.0
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

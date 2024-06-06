@@ -30,6 +30,7 @@ var locked_controls = false
 	"inventory": $HUD/Inventory
 }
 @onready var world = get_tree().current_scene
+@export var inventory = InventoryResource
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 

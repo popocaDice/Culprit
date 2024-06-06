@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://lam3po0bvx78"]
+
+[ext_resource type="Script" path="res://assets/prefabs/UI/inventory/InventorySlot.gd" id="1_xi4sd"]
+
+[node name="InventorySpace1" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("1_xi4sd")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="ItemDisplay" type="Sprite2D" parent="CenterContainer"]
