@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl0osk00h8gb8"
-path.s3tc="res://.godot/imported/Wood_albedo000.png-903c9aeb655cccc5d5ca6c37f7d13260.s3tc.ctex"
+uid="uid://dg4cl10nl3kfn"
+path.s3tc="res://.godot/imported/girl_Wood_albedo002.png-aafddb3ce9c663f0c2a9c5798a1e1179.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "6acd9a79f8493f71854a051a82383084"
+}
 
 [deps]
 
-source_file="res://assets/cutscenes/textures/Wood_albedo000.png"
-dest_files=["res://.godot/imported/Wood_albedo000.png-903c9aeb655cccc5d5ca6c37f7d13260.s3tc.ctex"]
+source_file="res://assets/models/Cutscenes/girl_Wood_albedo002.png"
+dest_files=["res://.godot/imported/girl_Wood_albedo002.png-aafddb3ce9c663f0c2a9c5798a1e1179.s3tc.ctex"]
 
 [params]
 

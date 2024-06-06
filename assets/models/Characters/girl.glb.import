@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1mww1sa2hl6n"
-path="res://.godot/imported/starterRoom.gltf-db2df90a0d2a137af215d70fe65becc5.scn"
+uid="uid://cmr1uacycu1h5"
+path="res://.godot/imported/girl.glb-e19fe8d69e9c4b0abc497064ff2b372b.scn"
 
 [deps]
 
-source_file="res://assets/cutscenes/starterRoom.gltf"
-dest_files=["res://.godot/imported/starterRoom.gltf-db2df90a0d2a137af215d70fe65becc5.scn"]
+source_file="res://assets/models/Characters/girl.glb"
+dest_files=["res://.godot/imported/girl.glb-e19fe8d69e9c4b0abc497064ff2b372b.scn"]
 
 [params]
 

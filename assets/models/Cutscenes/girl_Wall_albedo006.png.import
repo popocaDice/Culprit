@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csa6kygcf52i5"
-path.s3tc="res://.godot/imported/Wall_albedo004.png-6da85ee5d1934470e71d84ea436cd130.s3tc.ctex"
+uid="uid://c5whddyopjemp"
+path.s3tc="res://.godot/imported/girl_Wall_albedo006.png-6b518f43938cfd52747c7b91a07d8c35.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "fbe27d6a6b1403a84f25aef9ff9d8195"
+}
 
 [deps]
 
-source_file="res://assets/cutscenes/textures/Wall_albedo004.png"
-dest_files=["res://.godot/imported/Wall_albedo004.png-6da85ee5d1934470e71d84ea436cd130.s3tc.ctex"]
+source_file="res://assets/models/Cutscenes/girl_Wall_albedo006.png"
+dest_files=["res://.godot/imported/girl_Wall_albedo006.png-6b518f43938cfd52747c7b91a07d8c35.s3tc.ctex"]
 
 [params]
 

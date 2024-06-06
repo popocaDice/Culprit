@@ -44,17 +44,17 @@ func _ready():
 
 func _process(delta):
 	
-	if Input.is_action_just_pressed("game_pause"):
-		if not parts.pause.timer_stopped: return
-		parts.pause.timer(0.1)
-		world.pause_game()
-		parts.pause.show()
-	
-	if Input.is_action_just_pressed("inventory"):
-		if not parts.inventory.timer_stopped: return
-		parts.inventory.timer(0.1)
-		world.pause_game()
-		parts.inventory.show()
+	#if Input.is_action_just_pressed("game_pause"):
+		#if not parts.pause.timer_stopped: return
+		#parts.pause.timer(0.1)
+		#world.pause_game()
+		#parts.pause.show()
+	#
+	#if Input.is_action_just_pressed("inventory"):
+		#if not parts.inventory.timer_stopped: return
+		#parts.inventory.timer(0.1)
+		#world.pause_game()
+		#parts.inventory.show()
 	
 	if not ambienceWait: AmbiencePlay()
 	

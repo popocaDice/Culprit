@@ -7,11 +7,25 @@ signal pause
 signal unpause
 signal lockControls
 signal unlockControls
-
+signal inventory
+signal unventory
 
 func _ready():
 	pass
-	
+
+func _process(delta):
+	if Input.is_action_just_pressed("game_pause"):
+		pause_unpause()
+	if Input.is_action_just_pressed("inventory") and not paused:
+		pause_game()
+		inventory.emit()
+
+func pause_unpause():
+	if paused:
+		unpause_game()
+	else:
+		pause_game()
+
 func pause_game():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true #In case you want to pause the game
@@ -20,6 +34,7 @@ func pause_game():
 
 func unpause_game():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	unventory.emit()
 	get_tree().paused = false
 	paused = false
 	unpause.emit()

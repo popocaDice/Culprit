@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_51v1g"]
 [ext_resource type="PackedScene" uid="uid://cv71drfsq2pde" path="res://assets/models/Characters/maphands.glb" id="2_meu4y"]
 [ext_resource type="Script" path="res://assets/scripts/StaminaBar.gd" id="2_o8xbn"]
-[ext_resource type="CameraAttributesPractical" uid="uid://ck0pngarvq1ss" path="res://assets/prefabs/cameraSettings.tres" id="2_wgbme"]
+[ext_resource type="CameraAttributesPractical" uid="uid://j6fpvvu0hf2m" path="res://assets/prefabs/cameraSettings.tres" id="2_wgbme"]
 [ext_resource type="Script" path="res://assets/scripts/PauseMenu.gd" id="3_lntdj"]
 [ext_resource type="Theme" uid="uid://x6k7y2aew8c4" path="res://assets/themes/baseUITheme.tres" id="4_ow1mb"]
 [ext_resource type="PackedScene" uid="uid://2rwfumsr57nv" path="res://assets/prefabs/UI/settings.tscn" id="5_xjnw5"]
@@ -302,6 +302,7 @@ one_shot = true
 [node name="GameOver" parent="HUD" instance=ExtResource("7_lbw22")]
 
 [node name="Inventory" parent="HUD" instance=ExtResource("11_l8ups")]
+process_mode = 2
 visible = false
 offset_left = -576.0
 offset_top = -328.0
