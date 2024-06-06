@@ -19,7 +19,7 @@ func on_save_pressed():
 	$Pause.show()
 
 func _on_resume_pressed():
-	timer(0.1)
+	#timer(0.1)
 	world.unpause_game()
 	hide()
 
