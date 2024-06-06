@@ -16,21 +16,12 @@ var timer_stopped = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	world.inventory.connect(show)
+	world.unventory.connect(hide)
 	slots = $InventoryGrid.get_children()
 	slotSizePixels = ($InventoryGrid.size.x/ $InventoryGrid.columns)
 	gridPosition = $InventoryGrid.position
 	updateInventory()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if not timer_stopped:
-		return
-	if Input.is_action_just_pressed("game_pause"):
-		timer(0.1)
-		timer_stopped = false
-		_on_button_pressed()
 
 func moveItem(pickIndex, targetPosition):
 	var targetGridPosition = Vector2(int((targetPosition.x-gridPosition.x)/slotSizePixels), int((targetPosition.y-gridPosition.y)/slotSizePixels))
@@ -75,6 +66,7 @@ func addItem(id):
 
 func _on_button_pressed():
 	timer(0.1)
+	print_debug("fuck inventory")
 	timer_stopped = false
 	world.unpause_game()
 	hide()

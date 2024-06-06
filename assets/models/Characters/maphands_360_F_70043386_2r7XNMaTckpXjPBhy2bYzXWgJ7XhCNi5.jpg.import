@@ -2,13 +2,10 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br42ox7tjeomb"
+uid="uid://drrc6hg5xoniq"
 path="res://.godot/imported/maphands_360_F_70043386_2r7XNMaTckpXjPBhy2bYzXWgJ7XhCNi5.jpg-73692816b4222643e7361b677b5a40f1.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "f8acb17b77656513a2c8389e578185c9"
 }
 
 [deps]
@@ -24,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -34,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

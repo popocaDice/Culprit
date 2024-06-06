@@ -2,13 +2,10 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daslrr6t7q5oj"
+uid="uid://bsltx8x2ixgr3"
 path="res://.godot/imported/coalStick_coal.jpg-39d5043eeadc49dc5228895d3caff90b.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "1ababdefbf75090b80ee0c80494748d5"
 }
 
 [deps]
@@ -24,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -34,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

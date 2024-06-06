@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://314tk7i6mio1"
-path.s3tc="res://.godot/imported/Wall_albedo007.png-040052a80afa162b34feb2f179c2b933.s3tc.ctex"
+uid="uid://c2w4xm2egvrog"
+path.s3tc="res://.godot/imported/girl_Ceiling_albedo000.png-beaddf70aff61706660d523c445ef5cb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "fe981b162152ad9c267d2fea13723b8a"
+}
 
 [deps]
 
-source_file="res://assets/cutscenes/textures/Wall_albedo007.png"
-dest_files=["res://.godot/imported/Wall_albedo007.png-040052a80afa162b34feb2f179c2b933.s3tc.ctex"]
+source_file="res://assets/models/Cutscenes/girl_Ceiling_albedo000.png"
+dest_files=["res://.godot/imported/girl_Ceiling_albedo000.png-beaddf70aff61706660d523c445ef5cb.s3tc.ctex"]
 
 [params]
 
