@@ -2,22 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8ykctmsn5ffs"
-path.s3tc="res://.godot/imported/coalStick_coal.png-214078b3d055a669170e19e21f0858ee.s3tc.ctex"
+uid="uid://daslrr6t7q5oj"
+path="res://.godot/imported/coalStick_coal.jpg-39d5043eeadc49dc5228895d3caff90b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
-generator_parameters={}
+generator_parameters={
+"md5": "1ababdefbf75090b80ee0c80494748d5"
+}
 
 [deps]
 
-source_file="res://assets/models/Items/coalStick_coal.png"
-dest_files=["res://.godot/imported/coalStick_coal.png-214078b3d055a669170e19e21f0858ee.s3tc.ctex"]
+source_file="res://assets/models/Items/coalStick_coal.jpg"
+dest_files=["res://.godot/imported/coalStick_coal.jpg-39d5043eeadc49dc5228895d3caff90b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

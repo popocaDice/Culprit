@@ -1,4 +1,3 @@
-[gd_resource type="CameraAttributesPractical" format=3 uid="uid://ck0pngarvq1ss"]
+[gd_resource type="CameraAttributesPractical" format=3]
 
 [resource]
-exposure_multiplier = 3.0
