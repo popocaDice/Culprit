@@ -124,7 +124,7 @@ states/leave/node = SubResource("AnimationNodeAnimation_d2x52")
 states/leave/position = Vector2(719, 206)
 transitions = ["appear", "idle", SubResource("AnimationNodeStateMachineTransition_ly2kr"), "idle", "leave", SubResource("AnimationNodeStateMachineTransition_cvphd"), "Start", "hide", SubResource("AnimationNodeStateMachineTransition_3bja8"), "hide", "appear", SubResource("AnimationNodeStateMachineTransition_vicun"), "leave", "hide", SubResource("AnimationNodeStateMachineTransition_1ykpc")]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_koeac"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_c7glc"]
 size = Vector3(1.5, 4, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rynby"]
@@ -183,7 +183,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_o06hh")
 surface_material_override/1 = SubResource("ShaderMaterial_77uri")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.999994, 0.0033374, -0.000304212, -0.00333233, 0.980614, -0.195922, -0.000355557, 0.195922, 0.980619, 0.00286694, -1.46989, 0.0152135)
+transform = Transform3D(0.999994, 0.00333741, -0.000304215, -0.00333233, 0.980614, -0.195923, -0.000355557, 0.195923, 0.980619, 0.00286695, -1.46989, 0.0152135)
 bone_name = "Head"
 bone_idx = 5
 
@@ -209,7 +209,7 @@ parameters/conditions/playerInRange = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnRange" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 0.5)
-shape = SubResource("BoxShape3D_koeac")
+shape = SubResource("BoxShape3D_c7glc")
 
 [node name="InteractionRange" type="Area3D" parent="." index="4"]
 

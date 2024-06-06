@@ -540,7 +540,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_stlts")
 surface_material_override/1 = SubResource("ShaderMaterial_58ga3")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Actors/nil/Armature_001/Skeleton3D" index="2"]
-transform = Transform3D(-0.769131, 0.638516, 0.0270921, 0.637609, 0.769543, -0.035466, -0.0434942, -0.0100041, -0.999003, -0.164044, 1.03063, 0.259417)
+transform = Transform3D(-0.769132, 0.638515, 0.0270925, 0.637608, 0.769544, -0.0354657, -0.0434942, -0.0100034, -0.999003, -0.164043, 1.03063, 0.259421)
 bone_name = "Head"
 bone_idx = 5
 
@@ -645,12 +645,12 @@ bones/55/rotation = Quaternion(0.916169, -0.0695504, 0.39358, 0.0298785)
 bones/55/scale = Vector3(0.99999, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Actors/girl/Armature_002/Skeleton3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.829026, -0.55921, 0, 0.55921, 0.829026, 0, 0.666255, -1.00514)
+transform = Transform3D(1, 0, 0, 0, 0.829026, -0.55921, 0, 0.55921, 0.829026, 0, 0.666254, -1.00514)
 bone_name = "Bone.029"
 bone_idx = 7
 
 [node name="Camera3D" type="Camera3D" parent="Actors/girl/Armature_002/Skeleton3D/BoneAttachment3D"]
-transform = Transform3D(-1, -1.91911e-06, 1.65655e-06, -1.27329e-11, 0.653427, 0.756989, -2.53518e-06, 0.756989, -0.653427, 0, 0.782296, 0.152619)
+transform = Transform3D(-1, -1.91912e-06, 1.65654e-06, 0, 0.65342, 0.756995, -2.53518e-06, 0.756995, -0.65342, 0, 0.782296, 0.152619)
 rotation_edit_mode = 1
 visible = false
 
