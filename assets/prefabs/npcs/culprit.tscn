@@ -31,14 +31,14 @@ shader_parameter/texture_albedo = ExtResource("5_uyvj1")
 [sub_resource type="Gradient" id="Gradient_82ccg"]
 colors = PackedColorArray(0.103109, 0.235558, 0.284981, 1, 0.360784, 0.635294, 0.741176, 0.137255)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6qy1k"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nrrwv"]
 gradient = SubResource("Gradient_82ccg")
 
 [sub_resource type="Curve" id="Curve_4j0ig"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.128049, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.84335, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_6ebi8"]
+[sub_resource type="CurveTexture" id="CurveTexture_qqxjk"]
 width = 64
 curve = SubResource("Curve_4j0ig")
 
@@ -60,9 +60,9 @@ linear_accel_max = 1.0
 attractor_interaction_enabled = false
 scale_min = 0.02
 scale_max = 0.17
-scale_curve = SubResource("CurveTexture_6ebi8")
+scale_curve = SubResource("CurveTexture_qqxjk")
 color = Color(0.368627, 0.643137, 0.752941, 1)
-color_ramp = SubResource("GradientTexture1D_6qy1k")
+color_ramp = SubResource("GradientTexture1D_nrrwv")
 hue_variation_min = -0.03
 hue_variation_max = 0.03
 turbulence_enabled = true
@@ -70,7 +70,7 @@ turbulence_noise_scale = 5.0
 turbulence_noise_speed_random = 0.5
 turbulence_influence_min = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_klw1s"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfd4h"]
 shading_mode = 0
 vertex_color_use_as_albedo = true
 billboard_mode = 2
@@ -78,7 +78,7 @@ billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_d5qb4"]
 lightmap_size_hint = Vector2i(7, 7)
-material = SubResource("StandardMaterial3D_klw1s")
+material = SubResource("StandardMaterial3D_jfd4h")
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wdwg8"]
 animation = &"appear"
@@ -124,7 +124,7 @@ states/leave/node = SubResource("AnimationNodeAnimation_d2x52")
 states/leave/position = Vector2(719, 206)
 transitions = ["appear", "idle", SubResource("AnimationNodeStateMachineTransition_ly2kr"), "idle", "leave", SubResource("AnimationNodeStateMachineTransition_cvphd"), "Start", "hide", SubResource("AnimationNodeStateMachineTransition_3bja8"), "hide", "appear", SubResource("AnimationNodeStateMachineTransition_vicun"), "leave", "hide", SubResource("AnimationNodeStateMachineTransition_1ykpc")]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_c7glc"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ycmn0"]
 size = Vector3(1.5, 4, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rynby"]
@@ -183,7 +183,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_o06hh")
 surface_material_override/1 = SubResource("ShaderMaterial_77uri")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.999994, 0.00333741, -0.000304215, -0.00333233, 0.980614, -0.195923, -0.000355557, 0.195923, 0.980619, 0.00286695, -1.46989, 0.0152135)
+transform = Transform3D(0.999994, 0.0033374, -0.000304212, -0.00333233, 0.980614, -0.195922, -0.000355557, 0.195922, 0.980619, 0.00286694, -1.46989, 0.0152135)
 bone_name = "Head"
 bone_idx = 5
 
@@ -209,7 +209,7 @@ parameters/conditions/playerInRange = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnRange" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 0.5)
-shape = SubResource("BoxShape3D_c7glc")
+shape = SubResource("BoxShape3D_ycmn0")
 
 [node name="InteractionRange" type="Area3D" parent="." index="4"]
 

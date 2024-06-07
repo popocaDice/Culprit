@@ -32,6 +32,8 @@ window/stretch/aspect="keep_height"
 
 [editor]
 
+movie_writer/movie_file="C:/Users/ccnsa/Documents/GitHub/Culprit/assets/cutscenes/Intro.avi"
+movie_writer/fps=120
 export/convert_text_resources_to_binary=false
 
 [editor_plugins]

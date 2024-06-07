@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt38j0aa4jpoj"
-path.s3tc="res://.godot/imported/girl_Floor_albedo000.png-fef4aa6d65c6f4d45cd464c75e42acc7.s3tc.ctex"
+uid="uid://cxa8hp4gfue8k"
+path.s3tc="res://.godot/imported/girl_maphands_360_F_70043386_2r7XNMaTckpXjPBhy2bYzXWgJ7XhCNi5.jpg-dfae9df585a34b875025aa78f4bed5fe.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5e2c94f3e3d46d3fab994ce0ab86003a"
+"md5": "f8acb17b77656513a2c8389e578185c9"
 }
 
 [deps]
 
-source_file="res://assets/models/Cutscenes/girl_Floor_albedo000.png"
-dest_files=["res://.godot/imported/girl_Floor_albedo000.png-fef4aa6d65c6f4d45cd464c75e42acc7.s3tc.ctex"]
+source_file="res://assets/models/Cutscenes/girl_maphands_360_F_70043386_2r7XNMaTckpXjPBhy2bYzXWgJ7XhCNi5.jpg"
+dest_files=["res://.godot/imported/girl_maphands_360_F_70043386_2r7XNMaTckpXjPBhy2bYzXWgJ7XhCNi5.jpg-dfae9df585a34b875025aa78f4bed5fe.s3tc.ctex"]
 
 [params]
 
