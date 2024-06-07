@@ -650,7 +650,7 @@ bone_name = "Bone.029"
 bone_idx = 7
 
 [node name="Camera3D" type="Camera3D" parent="Actors/girl/Armature_002/Skeleton3D/BoneAttachment3D"]
-transform = Transform3D(-1, -1.91912e-06, 1.65654e-06, 0, 0.65342, 0.756995, -2.53518e-06, 0.756995, -0.65342, 0, 0.782296, 0.152619)
+transform = Transform3D(-1, -1.91912e-06, 1.65654e-06, 7.95808e-13, 0.65342, 0.756995, -2.53518e-06, 0.756995, -0.65342, 0, 0.782296, 0.152619)
 rotation_edit_mode = 1
 visible = false
 

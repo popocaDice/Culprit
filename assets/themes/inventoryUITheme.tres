@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ioqq48hcetow"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ioqq48hcetow"]
 
 [sub_resource type="Gradient" id="Gradient_7ywha"]
 offsets = PackedFloat32Array(0, 0.841155)
@@ -30,8 +30,12 @@ corner_radius_bottom_left = 2
 anti_aliasing = false
 anti_aliasing_size = 0.115
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xpmo6"]
+
 [resource]
 GridContainer/constants/h_separation = 0
 GridContainer/constants/v_separation = 0
 Panel/styles/panel = SubResource("StyleBoxTexture_ok0hy")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_ep4p3")
+Slot/base_type = &"PanelContainer"
+Slot/styles/panel = SubResource("StyleBoxTexture_xpmo6")

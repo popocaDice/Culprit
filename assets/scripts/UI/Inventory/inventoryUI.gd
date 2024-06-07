@@ -15,6 +15,7 @@ func updateSlots():
 		slots[i].update(inventory.items[i])
 
 func openInventory():
+	updateSlots()
 	show()
 
 func closeInventory():
