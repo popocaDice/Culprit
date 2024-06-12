@@ -158,11 +158,14 @@ func damage(value):
 func damagePercent(value):
 	damage((value*max_stamina)/100)
 	
-func getItem(id):
+func getItem(item : InventoryItem):
 	parts.sfx_audio_player.stream = load("res://assets/audio/click.mp3")
 	parts.sfx_audio_player.volume_db = -23
 	parts.sfx_audio_player.play()
-	parts.inventory.addItem(id)
+	if item.name == "map":
+		left_hand = item
+		UpdateHands()
+	#parts.inventory.addItem(item)
 	
 
 func AmbiencePlay():

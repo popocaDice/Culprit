@@ -40,6 +40,7 @@ func _ready():
 [node name="MountedTorch" instance=ExtResource("1_80nsb")]
 
 [node name="MountedTorch2" parent="." index="0"]
+layers = 16
 surface_material_override/1 = ExtResource("2_0v7p2")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="MountedTorch2" index="0"]

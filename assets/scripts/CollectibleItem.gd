@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var item: String
+@export var item: InventoryItem
 
 @onready var player
 

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://22mn32cufg2b"]
+
+[ext_resource type="Script" path="res://assets/scripts/INVENTORY/inventory_item.gd" id="1_hhqxk"]
+[ext_resource type="Texture2D" uid="uid://bd3f5qk8a5jbi" path="res://assets/models/Items/map_girl_girl_girl_maphands_map.png" id="2_tiyww"]
+
+[resource]
+script = ExtResource("1_hhqxk")
+name = "map"
+texture = ExtResource("2_tiyww")

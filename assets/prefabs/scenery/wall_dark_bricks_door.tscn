@@ -260,6 +260,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
 
 [node name="WallDoorFrame2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0100032, 0, 0, 0, 0, -0.0100032, 0, 0.0100032, 0, 0, 0, 0)
+layers = 2
 mesh = SubResource("ArrayMesh_2mmub")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("1_pqtdl")
@@ -286,6 +287,7 @@ shape = SubResource("BoxShape3D_v081r")
 
 [node name="Door2" type="MeshInstance3D" parent="Door/InteractionTriggerArea"]
 transform = Transform3D(1.563, 0, 0, 0, 1.563, 0, 0, 0, 1.563, 0, 0, 0)
+layers = 2
 mesh = SubResource("ArrayMesh_pr8lt")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("2_d6pju")

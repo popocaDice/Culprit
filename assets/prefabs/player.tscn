@@ -258,7 +258,7 @@ cast_shadow = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_d21lv")
 
-[node name="HUD" type="Camera2D" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 process_mode = 3
 
 [node name="StaminaBar" type="ProgressBar" parent="HUD"]

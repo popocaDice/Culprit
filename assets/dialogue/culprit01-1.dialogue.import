@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://28w7wooliu4n"
+path="res://.godot/imported/culprit01-1.dialogue-74f48f4549213545ea43411741837c3c.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/culprit01-1.dialogue"
+dest_files=["res://.godot/imported/culprit01-1.dialogue-74f48f4549213545ea43411741837c3c.tres"]
+
+[params]
+
+defaults=true
