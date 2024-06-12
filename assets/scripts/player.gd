@@ -33,7 +33,7 @@ var locked_controls = false
 	"inventory": $HUD/Inventory
 }
 @onready var world = get_tree().current_scene
-@export var inventory = InventoryResource
+@export var inventory: Inventory
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -165,7 +165,8 @@ func getItem(item : InventoryItem):
 	if item.name == "map":
 		left_hand = item
 		UpdateHands()
-	#parts.inventory.addItem(item)
+	else:
+		inventory.insert(item)
 	
 
 func AmbiencePlay():
