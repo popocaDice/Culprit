@@ -12,6 +12,6 @@ script = ExtResource("1_e5j48")
 
 [node name="Plane" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
-layers = 0
+layers = 4
 mesh = SubResource("PlaneMesh_61j05")
 surface_material_override/0 = ExtResource("1_7x85c")

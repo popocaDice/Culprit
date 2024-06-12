@@ -9,7 +9,7 @@ data = PackedVector3Array(400, 10, 0, -10.0001, 10.0001, -400, 400, 10, -400, 40
 [node name="BarsCorner" instance=ExtResource("1_x478m")]
 
 [node name="BarsCorner2" parent="." index="0"]
-layers = 2
+layers = 32
 surface_material_override/0 = ExtResource("2_b0677")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BarsCorner2" index="0"]

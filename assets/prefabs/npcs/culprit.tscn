@@ -212,7 +212,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_o06hh")
 surface_material_override/1 = SubResource("ShaderMaterial_77uri")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.999994, 0.00333741, -0.000304215, -0.00333233, 0.980614, -0.195923, -0.000355557, 0.195923, 0.980619, 0.00286695, -1.46989, 0.0152135)
+transform = Transform3D(0.999994, 0.0033374, -0.000304212, -0.00333233, 0.980614, -0.195922, -0.000355557, 0.195922, 0.980619, 0.00286694, -1.46989, 0.0152135)
 bone_name = "Head"
 bone_idx = 5
 

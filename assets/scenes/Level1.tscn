@@ -59,7 +59,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 0
 nextScene = "credits"
 
 [node name="Ceilings" type="Node3D" parent="NavigationRegion3D/Geometry"]
-visible = false
 
 [node name="Ceiling" parent="NavigationRegion3D/Geometry/Ceilings" instance=ExtResource("14_iqa8c")]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, -6, 0, -31)

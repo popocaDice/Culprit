@@ -9,7 +9,7 @@ size = Vector3(20, 400, 400)
 [node name="Bars" instance=ExtResource("1_e57yo")]
 
 [node name="Bars2" parent="." index="0"]
-layers = 2
+layers = 32
 surface_material_override/0 = ExtResource("2_5c52n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bars2" index="0"]

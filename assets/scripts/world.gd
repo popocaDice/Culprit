@@ -17,6 +17,8 @@ signal unventory
 var sceneToLoad = ""
 
 func _ready():
+	get_tree().root.use_occlusion_culling = true
+	
 	add_child(environment.instantiate())
 	loadScreen = $WorldEnvironment/CanvasLayer/PanelContainer
 	loadScreenTimer = $WorldEnvironment/CanvasLayer/PanelContainer/Timer
