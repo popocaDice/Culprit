@@ -42,13 +42,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
 
 [node name="WallCorner2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0100032, 0, 0, 0, 0, -0.0100032, 0, 0.0100032, 0, 0, 0, 0)
+layers = 2
 mesh = SubResource("ArrayMesh_kkp1j")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("1_dptp1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallCorner2"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WallCorner2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_njdrf")

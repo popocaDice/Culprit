@@ -1,0 +1,21 @@
+~ start
+
+Stranger: My my, how'd this weird lil thing get here? [wait=0.5]\n[shake rate=20 level=10]OY[/shake],[wait=0.3] thingy,[wait=0.3] can you speak, or is screaming all you do?
+- W-who are you? Where did mommy go? 
+	Stranger: Good, you can.
+- Huh?
+	Stranger: [wave amp=20 freq=3]Guess not[speed=0.2]...[/wave][wait=1][next=auto]
+	- Uhhh whhhhh...,,.
+		Stranger: Alright whatever, i can make this work.
+		=> tutorialmap
+	- W-who are you? Where did mommy go? 
+		Stranger: So you [shake rate=20 level=10]CAN[/shake] speak. Okay.
+Stranger: Don't know about this mommy you're talking about, but this place isn't safe for you to explain yourself yet.\n[wait=0.2]The big scary one is lurking about and we should probably keep quiet for the time being.
+=> tutorialmap
+
+~ tutorialmap
+Stranger: See that thing over there?\n[wait=0.2]That's a map of this floor, pick it up and try to find your way to the next floor.\n[wait=0.2]I'll find you again there, don't worry.
+- Can't you... guide me there?
+	Stranger: What, and put myself right in the middle of the danger?[wait=0.2] No thanks, I've got my own safe way to move around but that fleshy bit on you wouldn't let you come with me.
+- O-Okay...
+=> END

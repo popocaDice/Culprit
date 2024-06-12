@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgwhicbg8tw6s"]
+[gd_scene load_steps=3 format=3 uid="uid://bgwhicbg8tw6s"]
+
+[ext_resource type="Theme" uid="uid://x6k7y2aew8c4" path="res://assets/themes/baseUITheme.tres" id="1_dw2co"]
 
 [sub_resource type="Environment" id="Environment_wyjfk"]
 background_energy_multiplier = 0.5
@@ -11,4 +13,21 @@ fog_light_energy = 2.74
 fog_density = 0.05
 
 [node name="WorldEnvironment" type="WorldEnvironment"]
+process_mode = 3
 environment = SubResource("Environment_wyjfk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_dw2co")
+theme_type_variation = &"fadeInLoader"
+
+[node name="Timer" type="Timer" parent="CanvasLayer/PanelContainer"]
+wait_time = 2.0
+one_shot = true

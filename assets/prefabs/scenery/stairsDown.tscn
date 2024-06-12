@@ -18,9 +18,11 @@ script = ExtResource("2_40gk2")
 
 [node name="StairsDown2" parent="." index="0"]
 transform = Transform3D(0.0100032, 0, 0, 0, 0, -0.0100032, 0, 0.0100032, 0, 2, 0, 0)
+layers = 4
 surface_material_override/1 = ExtResource("2_3j8nn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StairsDown2" index="0"]
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StairsDown2/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_8vd10")

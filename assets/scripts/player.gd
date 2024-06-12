@@ -9,6 +9,9 @@ extends CharacterBody3D
 @export var max_stamina = 6.0
 @export var tired_duration = 1.5
 
+@export var left_hand:InventoryItem = null
+@export var right_hand:InventoryItem = null
+
 var stamina = max_stamina
 var regen_stamina: bool = true
 var speed = base_speed
@@ -30,7 +33,7 @@ var locked_controls = false
 	"inventory": $HUD/Inventory
 }
 @onready var world = get_tree().current_scene
-@export var inventory: Inventory
+@export var inventory = InventoryResource
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -42,6 +45,8 @@ func _ready():
 	
 	parts.camera.current = true
 	parts.stamina_bar.max_value = max_stamina
+	
+	UpdateHands()
 
 func _process(delta):
 	
@@ -153,11 +158,14 @@ func damage(value):
 func damagePercent(value):
 	damage((value*max_stamina)/100)
 	
-func getItem(item):
+func getItem(item : InventoryItem):
 	parts.sfx_audio_player.stream = load("res://assets/audio/click.mp3")
 	parts.sfx_audio_player.volume_db = -23
 	parts.sfx_audio_player.play()
-	inventory.insert(item)
+	if item.name == "map":
+		left_hand = item
+		UpdateHands()
+	#parts.inventory.addItem(item)
 	
 
 func AmbiencePlay():
@@ -169,6 +177,14 @@ func AmbiencePlay():
 	
 func HintInteract(show):
 	$HUD/InteractionHint.visible = show
+	
+func UpdateHands():
+	if !left_hand and !right_hand:
+		parts.hands.visible = false
+	else:
+		parts.hands.visible = true
+		parts.hands.leftHand(left_hand)
+		parts.hands.rightHand(right_hand)
 	
 func LockControls(state):
 	locked_controls = state

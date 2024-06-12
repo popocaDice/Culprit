@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cbda3qw7dlb2t"]
+
+[ext_resource type="Texture2D" uid="uid://dqaebtsvjf6nh" path="res://assets/models/Characters/girl_girl_girl_maphands_360_F_70043386_2r7XNMaTckpXjPBhy2bYzXWgJ7XhCNi5.jpg" id="1_n6k12"]
+
+[resource]
+resource_name = "Skin"
+cull_mode = 2
+albedo_texture = ExtResource("1_n6k12")
+roughness = 0.669091
+texture_filter = 2

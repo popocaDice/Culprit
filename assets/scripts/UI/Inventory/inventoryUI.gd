@@ -25,3 +25,6 @@ func closeInventory():
 func _on_button_pressed():
 	world.unpause_game()
 	hide()
+	
+func add_item(item : InventoryItem):
+	pass

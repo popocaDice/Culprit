@@ -1,7 +1,11 @@
 extends Node3D
 
 var paused = false
-@onready var player = get_tree().get_first_node_in_group("player")
+
+var loadScreen : PanelContainer
+var loadScreenTimer : Timer
+
+@export var environment : Resource = preload("res://assets/prefabs/world_environment.tscn")
 
 signal pause
 signal unpause
@@ -10,8 +14,17 @@ signal unlockControls
 signal inventory
 signal unventory
 
+var sceneToLoad = ""
+
 func _ready():
-	pass
+	get_tree().root.use_occlusion_culling = true
+	
+	add_child(environment.instantiate())
+	loadScreen = $WorldEnvironment/CanvasLayer/PanelContainer
+	loadScreenTimer = $WorldEnvironment/CanvasLayer/PanelContainer/Timer
+	
+	loadScreenTimer.timeout.connect(_on_timeout)
+	loadScreen.get_theme_stylebox("panel", "fadeInLoader").texture.current_frame = 0
 
 func _process(delta):
 	if Input.is_action_just_pressed("game_pause"):
@@ -48,16 +61,28 @@ func unlock_controls():
 	unlockControls.emit()
 
 func loadMainMenu():
-	get_tree().change_scene_to_file("res://assets/scenes/mainMenu.tscn")
+	loadScreenTimer.start(2)
+	loadScreen.theme_type_variation = "fadeOutLoader"
+	loadScreen.get_theme_stylebox("panel", "fadeOutLoader").texture.current_frame = 0
+	loadScreen.get_theme_stylebox("panel", "fadeOutLoader").texture.pause = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = false
 	unpause.emit()
+	sceneToLoad = "res://assets/scenes/mainMenu.tscn"
 	
 func loadScene(path: String):
-	get_tree().change_scene_to_file("res://assets/scenes/" + path + ".tscn")
+	loadScreenTimer.start(2)
+	loadScreen.theme_type_variation = "fadeOutLoader"
+	loadScreen.get_theme_stylebox("panel", "fadeOutLoader").texture.current_frame = 0
+	loadScreen.get_theme_stylebox("panel", "fadeOutLoader").texture.pause = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
 	unpause.emit()
+	sceneToLoad = "res://assets/scenes/" + path + ".tscn"
 
 func lockPlayerControls(lock):
-	player.LockControls(lock)
+	lockControls.emit()
+	
+func _on_timeout():
+	if not sceneToLoad == "":
+		get_tree().change_scene_to_file(sceneToLoad)
