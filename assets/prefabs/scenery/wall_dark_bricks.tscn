@@ -49,8 +49,8 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("1_otxyr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall2"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_63jw3")

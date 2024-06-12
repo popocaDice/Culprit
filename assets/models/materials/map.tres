@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://vvig8qhi1hml"]
+
+[ext_resource type="Texture2D" uid="uid://bcyqqiubgifaa" path="res://assets/models/Characters/girl_girl_girl_maphands_map.png" id="1_4ht3v"]
+
+[resource]
+resource_name = "map"
+cull_mode = 2
+albedo_texture = ExtResource("1_4ht3v")
+texture_filter = 2

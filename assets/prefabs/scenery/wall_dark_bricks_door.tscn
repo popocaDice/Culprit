@@ -266,8 +266,8 @@ surface_material_override/0 = ExtResource("1_pqtdl")
 surface_material_override/1 = ExtResource("2_d6pju")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallDoorFrame2"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WallDoorFrame2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_8u5bk")
@@ -277,6 +277,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.255)
 metadata/open = false
 
 [node name="InteractionTriggerArea" type="Area3D" parent="Door"]
+collision_layer = 512
 script = ExtResource("3_rcuou")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door/InteractionTriggerArea"]
@@ -291,8 +292,8 @@ surface_material_override/0 = ExtResource("2_d6pju")
 surface_material_override/1 = ExtResource("4_bqjen")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Door/InteractionTriggerArea/Door2"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door/InteractionTriggerArea/Door2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_cixg8")

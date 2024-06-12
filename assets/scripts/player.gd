@@ -9,6 +9,9 @@ extends CharacterBody3D
 @export var max_stamina = 6.0
 @export var tired_duration = 1.5
 
+@export var left_hand:InventoryItem = null
+@export var right_hand:InventoryItem = null
+
 var stamina = max_stamina
 var regen_stamina: bool = true
 var speed = base_speed
@@ -42,6 +45,8 @@ func _ready():
 	
 	parts.camera.current = true
 	parts.stamina_bar.max_value = max_stamina
+	
+	UpdateHands()
 
 func _process(delta):
 	
@@ -169,6 +174,14 @@ func AmbiencePlay():
 	
 func HintInteract(show):
 	$HUD/InteractionHint.visible = show
+	
+func UpdateHands():
+	if !left_hand and !right_hand:
+		parts.hands.visible = false
+	else:
+		parts.hands.visible = true
+		parts.hands.leftHand(left_hand)
+		parts.hands.rightHand(right_hand)
 	
 func LockControls(state):
 	locked_controls = state

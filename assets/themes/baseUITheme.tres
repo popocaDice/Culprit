@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://x6k7y2aew8c4"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://x6k7y2aew8c4"]
 
 [ext_resource type="Texture2D" uid="uid://cg64mt6mux8gx" path="res://assets/textures/UI/checkedToggleButton.png" id="1_p1syw"]
 [ext_resource type="Texture2D" uid="uid://cjxrnial788mh" path="res://assets/textures/UI/uncheckedToggleButton.png" id="2_paaow"]
+[ext_resource type="Texture2D" uid="uid://de2y7rvmvyusy" path="res://assets/textures/UI/fadeInScreen/fadeInAnimatedTexture.tres" id="3_btn2a"]
+[ext_resource type="Texture2D" uid="uid://dmkbov4hpbop2" path="res://assets/textures/UI/fadeOutScreen/fadeOutAnimatedTexture.tres" id="4_pmgsk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lp35"]
 bg_color = Color(0.145098, 0.0901961, 0.145098, 1)
@@ -61,6 +63,12 @@ gradient = SubResource("Gradient_oj0cv")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8eiqu"]
 texture = SubResource("GradientTexture1D_ynwpo")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0dp5m"]
+texture = ExtResource("3_btn2a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2l0fk"]
+texture = ExtResource("4_pmgsk")
+
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
@@ -79,3 +87,7 @@ CheckButton/styles/pressed = SubResource("StyleBoxFlat_bxp5c")
 HSlider/styles/slider = SubResource("StyleBoxLine_k1lvp")
 Label/font_sizes/font_size = 12
 Panel/styles/panel = SubResource("StyleBoxTexture_8eiqu")
+fadeInLoader/base_type = &"PanelContainer"
+fadeInLoader/styles/panel = SubResource("StyleBoxTexture_0dp5m")
+fadeOutLoader/base_type = &"PanelContainer"
+fadeOutLoader/styles/panel = SubResource("StyleBoxTexture_2l0fk")

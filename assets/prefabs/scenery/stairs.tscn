@@ -20,6 +20,7 @@ script = ExtResource("2_1pbgj")
 transform = Transform3D(0.0100032, 0, 0, 0, 0, -0.0100032, 0, 0.0100032, 0, 2, 0.01, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Stairs2" index="0"]
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs2/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_fga88")

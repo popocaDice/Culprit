@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bdfyyuyhauofb"]
+[gd_scene load_steps=29 format=3 uid="uid://bdfyyuyhauofb"]
 
 [ext_resource type="PackedScene" uid="uid://bsmn03cff873c" path="res://assets/models/Characters/Culprit.glb" id="1_7b6bo"]
 [ext_resource type="Script" path="res://assets/scripts/NPCS/culprit.gd" id="2_r5e0i"]
@@ -29,10 +29,19 @@ shader_parameter/uv_offset = null
 shader_parameter/texture_albedo = ExtResource("5_uyvj1")
 
 [sub_resource type="Gradient" id="Gradient_82ccg"]
-colors = PackedColorArray(0.103109, 0.235558, 0.284981, 1, 0.360784, 0.635294, 0.741176, 0.137255)
+colors = PackedColorArray(0.103109, 0.235558, 0.284981, 1, 0.207843, 0.694118, 0.545098, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_nrrwv"]
 gradient = SubResource("Gradient_82ccg")
+
+[sub_resource type="Curve" id="Curve_jdaji"]
+min_value = 0.5
+max_value = 1.5
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1.5), 0.0720578, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_bnsyn"]
+curve = SubResource("Curve_jdaji")
 
 [sub_resource type="Curve" id="Curve_4j0ig"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.128049, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.84335, 0.0, 0, 0]
@@ -63,6 +72,7 @@ scale_max = 0.17
 scale_curve = SubResource("CurveTexture_qqxjk")
 color = Color(0.368627, 0.643137, 0.752941, 1)
 color_ramp = SubResource("GradientTexture1D_nrrwv")
+emission_curve = SubResource("CurveTexture_bnsyn")
 hue_variation_min = -0.03
 hue_variation_max = 0.03
 turbulence_enabled = true
@@ -71,8 +81,17 @@ turbulence_noise_speed_random = 0.5
 turbulence_influence_min = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfd4h"]
+transparency = 1
+cull_mode = 2
 shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+disable_fog = true
 vertex_color_use_as_albedo = true
+refraction_scale = 1.0
+texture_filter = 0
+disable_receive_shadows = true
 billboard_mode = 2
 billboard_keep_scale = true
 
@@ -124,7 +143,7 @@ states/leave/node = SubResource("AnimationNodeAnimation_d2x52")
 states/leave/position = Vector2(719, 206)
 transitions = ["appear", "idle", SubResource("AnimationNodeStateMachineTransition_ly2kr"), "idle", "leave", SubResource("AnimationNodeStateMachineTransition_cvphd"), "Start", "hide", SubResource("AnimationNodeStateMachineTransition_3bja8"), "hide", "appear", SubResource("AnimationNodeStateMachineTransition_vicun"), "leave", "hide", SubResource("AnimationNodeStateMachineTransition_1ykpc")]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ycmn0"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_egeae"]
 size = Vector3(1.5, 4, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rynby"]
@@ -209,7 +228,7 @@ parameters/conditions/playerInRange = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnRange" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 0.5)
-shape = SubResource("BoxShape3D_ycmn0")
+shape = SubResource("BoxShape3D_egeae")
 
 [node name="InteractionRange" type="Area3D" parent="." index="4"]
 
