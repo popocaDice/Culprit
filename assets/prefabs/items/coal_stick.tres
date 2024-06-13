@@ -7,3 +7,6 @@
 script = ExtResource("1_cacnf")
 name = "Coal Stick"
 texture = ExtResource("2_8k8vx")
+stackable = true
+equipable = false
+twoHanded = false

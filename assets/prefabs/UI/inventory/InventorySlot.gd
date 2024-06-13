@@ -1,6 +1,5 @@
 extends PanelContainer
 
-var itemClass = preload("res://assets/prefabs/UI/inventory/test_item_icon.tscn")
 @onready var visual: PanelContainer = $PanelDisplay
 @onready var amount_text: Label = $Label
 
@@ -15,4 +14,12 @@ func update(slot: InventorySlot):
 		visual.add_theme_stylebox_override("panel", new_style)
 		if slot.amount > 1:
 			amount_text.visible = true
+		else:
+			amount_text.visible = false
 		amount_text.text = str(slot.amount)
+
+func _on_button_pressed():
+	if(get_parent().name == "HandsGrid"):
+		get_parent().clicked(self, true)
+		return
+	get_parent().clicked(self, false)

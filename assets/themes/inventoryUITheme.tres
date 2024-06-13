@@ -1,4 +1,8 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ioqq48hcetow"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ioqq48hcetow"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8x2b"]
+bg_color = Color(1, 1, 1, 0.14902)
+border_blend = true
 
 [sub_resource type="Gradient" id="Gradient_7ywha"]
 offsets = PackedFloat32Array(0, 0.841155)
@@ -33,6 +37,7 @@ anti_aliasing_size = 0.115
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xpmo6"]
 
 [resource]
+Button/styles/focus = SubResource("StyleBoxFlat_a8x2b")
 GridContainer/constants/h_separation = 0
 GridContainer/constants/v_separation = 0
 Panel/styles/panel = SubResource("StyleBoxTexture_ok0hy")

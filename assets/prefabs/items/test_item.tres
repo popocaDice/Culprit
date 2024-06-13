@@ -7,3 +7,6 @@
 script = ExtResource("1_ami7d")
 name = "Test"
 texture = ExtResource("2_qt2n4")
+stackable = false
+equipable = true
+twoHanded = false
