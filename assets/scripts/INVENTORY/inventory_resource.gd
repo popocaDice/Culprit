@@ -41,19 +41,12 @@ func invertHands():
 
 func equipItem(inventorySlot:int, handSlot:int):
 	if(!slots[inventorySlot].item):
+		var tempSlot = hands[handSlot]
+		hands[handSlot] = slots[inventorySlot]
+		slots[inventorySlot] = tempSlot
+		update.emit()
 		return
 	if(slots[inventorySlot].item.equipable):
-		var tempSlot = hands[handSlot]
-		hands[handSlot] = slots[inventorySlot]
-		slots[inventorySlot] = tempSlot
-	update.emit()
-
-func unequipItem(inventorySlot:int, handSlot:int):
-	if(!slots[inventorySlot].item):
-		var tempSlot = hands[handSlot]
-		hands[handSlot] = slots[inventorySlot]
-		slots[inventorySlot] = tempSlot
-	elif(slots[inventorySlot].item.equipable):
 		var tempSlot = hands[handSlot]
 		hands[handSlot] = slots[inventorySlot]
 		slots[inventorySlot] = tempSlot

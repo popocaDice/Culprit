@@ -49,7 +49,7 @@ func clicked(slotIndex:int, isHand:bool):
 	if(clickedPositionHand and isHand):
 		inventory.invertHands()
 	elif(clickedPositionHand):
-		inventory.unequipItem(slotIndex, clickedPosition)
+		inventory.equipItem(slotIndex, clickedPosition)
 	elif(isHand):
 		inventory.equipItem(clickedPosition, slotIndex)
 	else:
