@@ -7,6 +7,10 @@ extends VideoStreamPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	finished.connect(_end)
+	
+func _process(delta):
+	if Input.is_action_just_pressed("game_pause"):
+		world.loadScene(scene)
 
 func _end():
 	paused = true

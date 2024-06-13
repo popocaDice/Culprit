@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bumc4ptv2q88q"]
+[gd_scene load_steps=5 format=3 uid="uid://bauwhc21d2dsu"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_26gya"]
 [ext_resource type="VideoStream" path="res://assets/cutscenes/intro.ogv" id="2_dbull"]
@@ -8,6 +8,7 @@
 bg_color = Color(0, 0, 0, 1)
 
 [node name="World" type="Node3D"]
+process_mode = 3
 script = ExtResource("1_26gya")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

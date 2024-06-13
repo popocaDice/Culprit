@@ -2,15 +2,12 @@ extends Control
 
 @onready var world
 
-var label_height
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	world = get_node("/root/World")
-	label_height = $Container/Label.get_line_count() * $Container/Label.get_line_height()
+	world = get_tree().current_scene
 	
 func _process(delta):
-	if $Container/Label.global_position.y + label_height <= -2 * get_viewport_rect().size.y/3:
+	if Input.is_action_just_pressed("game_pause"):
 		world.loadMainMenu()
 	
 func _input(event):
