@@ -10,14 +10,13 @@ extends CharacterBody3D
 @export var tired_duration = 1.5
 @export var initial_angle: float = 0
 
-@export var left_hand:InventoryItem = null
-@export var right_hand:InventoryItem = null
-
 var stamina = max_stamina
 var regen_stamina: bool = true
 var speed = base_speed
 var sprinting = false
 var camera_fov_extents = [75.0, 85.0] #index 0 is normal, index 1 is sprinting
+var left_hand: bool = false
+var right_hand: bool = false
 
 var locked_controls = false
 
@@ -34,7 +33,7 @@ var locked_controls = false
 	"inventory": $HUD/Inventory
 }
 @onready var world = get_tree().current_scene
-@export var inventory = InventoryResource
+@export var inventory: Inventory
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -43,6 +42,7 @@ var ambienceWait: bool = false
 func _ready():
 	world.pause.connect(_on_pause)
 	world.unpause.connect(_on_unpause)
+	world.unpause.connect(UpdateHands)
 	world.lockControls.connect(LockControls)
 	
 	parts.camera.current = true
@@ -50,11 +50,9 @@ func _ready():
 	
 	parts.head.rotation_degrees.y = initial_angle
 	parts.hands.rotation_degrees.y = initial_angle
-	
 	UpdateHands()
 
 func _process(delta):
-	
 	#if Input.is_action_just_pressed("game_pause"):
 		#if not parts.pause.timer_stopped: return
 		#parts.pause.timer(0.1)
@@ -167,10 +165,7 @@ func getItem(item : InventoryItem):
 	parts.sfx_audio_player.stream = load("res://assets/audio/click.mp3")
 	parts.sfx_audio_player.volume_db = -23
 	parts.sfx_audio_player.play()
-	if item.name == "map":
-		left_hand = item
-		UpdateHands()
-	#parts.inventory.addItem(item)
+	inventory.insert(item)
 	
 
 func AmbiencePlay():
@@ -184,12 +179,14 @@ func HintInteract(show):
 	$HUD/InteractionHint.visible = show
 	
 func UpdateHands():
+	left_hand = not !inventory.hands[0].item
+	right_hand = not !inventory.hands[1].item
 	if !left_hand and !right_hand:
 		parts.hands.visible = false
 	else:
 		parts.hands.visible = true
-		parts.hands.leftHand(left_hand)
-		parts.hands.rightHand(right_hand)
+		parts.hands.leftHand(inventory.hands[0].item)
+		parts.hands.rightHand(inventory.hands[1].item)
 	
 func LockControls(state):
 	locked_controls = state

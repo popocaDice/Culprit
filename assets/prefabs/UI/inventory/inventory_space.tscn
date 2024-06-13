@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://lam3po0bvx78"]
+
+[ext_resource type="Script" path="res://assets/prefabs/UI/inventory/InventorySlot.gd" id="1_nniyl"]
+[ext_resource type="Theme" uid="uid://ioqq48hcetow" path="res://assets/themes/inventoryUITheme.tres" id="2_nw4vn"]
+
+[node name="InventorySpace1" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1142.0
+offset_bottom = -638.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("1_nniyl")
+
+[node name="PanelDisplay" type="PanelContainer" parent="."]
+layout_mode = 2
+theme = ExtResource("2_nw4vn")
+theme_type_variation = &"Slot"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+focus_mode = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

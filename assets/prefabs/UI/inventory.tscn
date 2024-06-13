@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://do78l80g8g4i8"]
+[gd_scene load_steps=5 format=3 uid="uid://do78l80g8g4i8"]
 
 [ext_resource type="Theme" uid="uid://ioqq48hcetow" path="res://assets/themes/inventoryUITheme.tres" id="1_bphio"]
 [ext_resource type="Script" path="res://assets/scripts/UI/Inventory/inventoryUI.gd" id="2_q6wc5"]
-[ext_resource type="PackedScene" uid="uid://lam3po0bvx78" path="res://assets/prefabs/inventory/inventory_space.tscn" id="3_iuqnd"]
+[ext_resource type="PackedScene" uid="uid://lam3po0bvx78" path="res://assets/prefabs/UI/inventory/inventory_space.tscn" id="3_eshv5"]
+[ext_resource type="Script" path="res://assets/scripts/UI/Inventory/inventoryGrid.gd" id="3_u4thu"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -30,299 +31,315 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -512.0
-offset_top = -192.0
+offset_top = -224.0
 offset_right = 512.0
-offset_bottom = 192.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 16
+script = ExtResource("3_u4thu")
 
-[node name="InventorySpace1" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace1" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace2" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace2" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace3" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace3" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace4" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace4" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace5" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace5" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace6" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace6" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace7" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace7" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace8" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace8" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace9" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace9" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace10" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace10" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace11" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace11" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace12" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace12" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace13" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace13" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace14" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace14" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace15" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace15" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace16" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace16" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace17" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace17" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace18" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace18" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace19" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace19" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace20" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace20" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace21" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace21" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace22" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace22" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace23" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace23" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace24" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace24" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace25" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace25" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace26" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace26" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace27" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace27" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace28" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace28" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace29" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace29" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace30" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace30" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace31" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace31" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace32" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace32" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace33" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace33" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace34" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace34" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace35" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace35" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace36" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace36" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace37" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace37" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace38" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace38" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace39" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace39" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace40" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace40" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace41" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace41" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace42" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace42" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace43" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace43" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace44" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace44" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace45" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace45" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace46" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace46" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace47" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace47" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace48" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace48" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace49" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace49" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace50" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace50" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace51" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace51" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace52" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace52" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace53" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace53" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace54" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace54" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace55" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace55" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace56" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace56" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace57" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace57" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace58" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace58" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace59" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace59" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace60" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace60" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace61" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace61" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace62" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace62" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace63" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace63" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace64" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace64" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace65" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace65" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace66" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace66" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace67" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace67" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace68" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace68" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace69" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace69" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace70" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace70" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace71" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace71" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace72" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace72" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace73" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace73" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace74" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace74" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace75" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace75" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace76" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace76" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace77" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace77" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace78" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace78" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace79" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace79" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace80" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace80" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace81" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace81" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace82" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace82" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace83" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace83" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace84" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace84" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace85" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace85" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace86" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace86" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace87" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace87" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace88" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace88" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace89" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace89" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace90" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace90" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace91" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace91" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace92" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace92" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace93" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace93" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace94" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace94" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace95" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace95" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
-[node name="InventorySpace96" parent="InventoryGrid" instance=ExtResource("3_iuqnd")]
+[node name="InventorySpace96" parent="InventoryGrid" instance=ExtResource("3_eshv5")]
+layout_mode = 2
+
+[node name="HandsGrid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 485.0
+offset_right = 640.0
+offset_bottom = 549.0
+columns = 2
+script = ExtResource("3_u4thu")
+
+[node name="InventorySpace1" parent="HandsGrid" instance=ExtResource("3_eshv5")]
+layout_mode = 2
+
+[node name="InventorySpace2" parent="HandsGrid" instance=ExtResource("3_eshv5")]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="."]

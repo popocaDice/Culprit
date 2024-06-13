@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bc0onf0n0mrif"]
 
 [ext_resource type="Script" path="res://assets/scripts/CollectibleItem.gd" id="1_2q5ry"]
-[ext_resource type="Resource" uid="uid://2tdrt4yh1obo" path="res://assets/prefabs/items/coal_stick.tres" id="2_6lqo3"]
 [ext_resource type="PackedScene" uid="uid://c0ohjfb7fm4bm" path="res://assets/models/Items/coalStick.glb" id="2_86gea"]
+[ext_resource type="Resource" uid="uid://2tdrt4yh1obo" path="res://assets/prefabs/items/coal_stick.tres" id="2_cmo8w"]
 
 [sub_resource type="Animation" id="Animation_nwbkd"]
 length = 0.001
@@ -69,8 +69,9 @@ _data = {
 size = Vector3(1, 2, 1)
 
 [node name="CoalStick" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 script = ExtResource("1_2q5ry")
-item = ExtResource("2_6lqo3")
+item = ExtResource("2_cmo8w")
 
 [node name="Mesh" parent="." instance=ExtResource("2_86gea")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 1, 0)
