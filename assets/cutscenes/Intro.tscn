@@ -197,7 +197,7 @@ bone_idx = 30
 transform = Transform3D(-1.42857, 1.2489e-07, 2.84217e-14, -4.53663e-08, -0.51893, 1.33099, 1.16359e-07, 1.33099, 0.51893, 0.0217547, 0.16475, 0.0310938)
 
 [node name="Camera" parent="Actors/girl/Armature_002/Skeleton3D/BoneAttachment3D/camera" index="0"]
-transform = Transform3D(1, 7.98467e-08, 8.70939e-08, 8.70939e-08, -0.996238, -0.0866601, 7.98467e-08, 0.0866601, -0.996238, -4.76837e-07, -0.00355051, -3.04743e-08)
+transform = Transform3D(1, 7.98467e-08, 8.70939e-08, 8.70939e-08, -0.996238, -0.08666, 7.98467e-08, 0.08666, -0.996238, -4.76837e-07, -0.00355051, -3.04743e-08)
 fov = 48.7
 
 [node name="AnimationPlayer" parent="Actors/girl/Armature_002/Skeleton3D/BoneAttachment3D/camera" index="1"]

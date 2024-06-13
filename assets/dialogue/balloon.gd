@@ -34,7 +34,7 @@ var dialogue_line: DialogueLine:
 
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
-			world.lockPlayerControls(false)
+			world.lock_controls(false)
 			queue_free()
 			return
 
@@ -42,6 +42,8 @@ var dialogue_line: DialogueLine:
 		if not is_node_ready():
 			await ready
 
+		world.lock_controls(true)
+		
 		dialogue_line = next_dialogue_line
 
 		character_label.visible = not dialogue_line.character.is_empty()
@@ -107,7 +109,6 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 	is_waiting_for_input = false
 	resource = dialogue_resource
 	self.dialogue_line = await resource.get_next_dialogue_line(title, temporary_game_states)
-	world.lockPlayerControls(true)
 
 
 ## Go to the next line

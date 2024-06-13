@@ -14,6 +14,8 @@ signal response_selected(response)
 ## The action for accepting a response (is possibly overridden by parent dialogue balloon).
 @export var next_action: StringName = &""
 
+@onready var container: HFlowContainer = $Container
+
 ## The list of dialogue responses.
 var responses: Array = []:
 	get:
@@ -22,10 +24,10 @@ var responses: Array = []:
 		responses = value
 
 		# Remove any current items
-		for item in get_children():
+		for item in container.get_children():
 			if item == response_template: continue
 
-			remove_child(item)
+			container.remove_child(item)
 			item.queue_free()
 
 		# Add new items
@@ -51,7 +53,7 @@ var responses: Array = []:
 
 				item.set_meta("response", response)
 
-				add_child(item)
+				container.add_child(item)
 
 			_configure_focus()
 
@@ -69,7 +71,8 @@ func _ready() -> void:
 ## Get the selectable items in the menu.
 func get_menu_items() -> Array:
 	var items: Array = []
-	for child in get_children():
+	container = $Container
+	for child in container.get_children():
 		if not child.visible: continue
 		if "Disallowed" in child.name: continue
 		items.append(child)
