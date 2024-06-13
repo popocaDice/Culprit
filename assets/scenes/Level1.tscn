@@ -31,18 +31,20 @@ agent_radius = 1.0
 agent_max_climb = 0.2
 
 [node name="World" type="Node3D"]
+process_mode = 3
 script = ExtResource("1_4e1ss")
 
 [node name="Bloodlust" parent="." instance=ExtResource("3_xfirb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -3)
 
 [node name="Player" parent="." instance=ExtResource("4_wsbcc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -14.47)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -15)
+initial_angle = 180.0
 
 [node name="Culprit" parent="." instance=ExtResource("4_pvj75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -11)
 dialogue_resource = ExtResource("5_7i6kv")
-spawnRangeScale = [11.0, 12.0]
+spawnRangeScale = [11.5, 13.0]
 spawnRangeOffset = [3.0, 1.5]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]

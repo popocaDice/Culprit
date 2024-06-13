@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_51v1g"]
 [ext_resource type="Script" path="res://assets/scripts/StaminaBar.gd" id="2_o8xbn"]
 [ext_resource type="Resource" uid="uid://r1k4wxlctvnv" path="res://assets/prefabs/inventory/playerinventory.tres" id="2_up17t"]
-[ext_resource type="CameraAttributesPractical" uid="uid://bve2bp7cgjnsi" path="res://assets/prefabs/cameraSettings.tres" id="2_wgbme"]
+[ext_resource type="CameraAttributesPractical" uid="uid://d15uifp0twa7n" path="res://assets/prefabs/cameraSettings.tres" id="2_wgbme"]
 [ext_resource type="Script" path="res://assets/scripts/PauseMenu.gd" id="3_lntdj"]
 [ext_resource type="Theme" uid="uid://x6k7y2aew8c4" path="res://assets/themes/baseUITheme.tres" id="4_ow1mb"]
 [ext_resource type="PackedScene" uid="uid://cmr1uacycu1h5" path="res://assets/models/Characters/girl.glb" id="4_p884e"]
@@ -258,7 +258,7 @@ cast_shadow = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_d21lv")
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="Camera2D" parent="."]
 process_mode = 3
 
 [node name="StaminaBar" type="ProgressBar" parent="HUD"]

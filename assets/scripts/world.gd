@@ -1,6 +1,7 @@
 extends Node3D
 
 var paused = false
+var busy = false
 
 var loadScreen : PanelContainer
 var loadScreenTimer : Timer
@@ -34,7 +35,7 @@ func _process(delta):
 		inventory.emit()
 
 func pause_unpause():
-	if paused:
+	if paused or busy:
 		unpause_game()
 	else:
 		pause_game()
@@ -53,8 +54,9 @@ func unpause_game():
 	unpause.emit()
 
 func lock_controls(showCursor):
+	busy = showCursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if showCursor else Input.MOUSE_MODE_CAPTURED)
-	lockControls.emit()
+	lockControls.emit(showCursor)
 
 func unlock_controls():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

@@ -17,7 +17,7 @@ func _on_quit_pressed():
 
 
 func _on_start_pressed():
-	world.loadScene("Level1")
+	world.loadScene("IntroScene")
 
 
 func _on_settings_pressed():

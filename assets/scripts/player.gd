@@ -8,6 +8,7 @@ extends CharacterBody3D
 @export var accel = 10
 @export var max_stamina = 6.0
 @export var tired_duration = 1.5
+@export var initial_angle: float = 0
 
 @export var left_hand:InventoryItem = null
 @export var right_hand:InventoryItem = null
@@ -42,9 +43,13 @@ var ambienceWait: bool = false
 func _ready():
 	world.pause.connect(_on_pause)
 	world.unpause.connect(_on_unpause)
+	world.lockControls.connect(LockControls)
 	
 	parts.camera.current = true
 	parts.stamina_bar.max_value = max_stamina
+	
+	parts.head.rotation_degrees.y = initial_angle
+	parts.hands.rotation_degrees.y = initial_angle
 	
 	UpdateHands()
 
