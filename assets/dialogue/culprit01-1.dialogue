@@ -19,4 +19,5 @@ Stranger: See that thing over there?\n[wait=0.2]That's a map of this floor, pick
 	Stranger: What, and put myself right in the middle of the danger?[wait=0.2] No thanks, I've got my own safe way to move around but that fleshy bit on you wouldn't let you come with me.
 	- W-wha-
 - W-wha-
+set CulpritHide = true
 => END

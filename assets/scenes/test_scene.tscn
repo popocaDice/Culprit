@@ -158,7 +158,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -7)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -11)
 
 [node name="Culprit" parent="." instance=ExtResource("10_x3w6v")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, -10)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 2.6, -10)
 dialogue_resource = ExtResource("12_76lk6")
 spawnRangeScale = [7.5, 13.0]
 spawnRangeOffset = [-1.0, 1.0]

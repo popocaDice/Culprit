@@ -19,11 +19,13 @@ config/icon="res://assets/textures/icon.png"
 
 GGS="*res://addons/ggs/classes/global/ggs.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+DialogueState="*res://assets/dialogue/DialogueState.gd"
 
 [dialogue_manager]
 
 general/wrap_lines=true
 general/balloon_path="res://assets/dialogue/balloon.tscn"
+general/states=["DialogueState"]
 
 [display]
 

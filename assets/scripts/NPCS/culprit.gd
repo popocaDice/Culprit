@@ -55,6 +55,7 @@ func _on_spawn_range_area_entered(area):
 func _on_spawn_range_area_exited(area):
 	if area.get_parent_node_3d().is_in_group("player"):
 		animationTree.set("parameters/conditions/playerInRange", false)
+		DialogueState.CulpritHide = false
 
 
 func _on_interaction_range_area_entered(area):
