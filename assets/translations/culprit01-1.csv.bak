@@ -1,0 +1,43 @@
+keys,en,_character
+Stranger,Stranger
+te5ccc80902,"My my, how'd this weird lil thing get here? [wait=0.5]
+[shake rate=20 level=10]OY[/shake],[wait=0.3] thingy,[wait=0.3] can you speak, or is screaming all you do?",Stranger
+t51371dc34f,W-who are you? Where did mommy go?,(response)
+t6de130910d,"Good, you can.",Stranger
+te57e000ae0,Huh?,(response)
+t8309730620,[wave amp=20 freq=3]Guess not[speed=0.2]...[/wave][wait=1][next=auto],Stranger
+t113b023a40,"Uhhh whhhhh...,,.",(response)
+tab6efd97ee,"Alright whatever,[wait=0.2] i can make this work.",Stranger
+t3d1da3ccc7,W-who are you? Where did mommy go?,(response)
+tede5342cf4,So you [speed=0.2][shake rate=20 level=10]CAN[/shake][speed=0.5] speak.[wait=0.2] Okay.,Stranger
+t174b956963,"Don't know about this mommy you're talking about, but this place isn't safe for you to explain yourself yet.
+[wait=0.2]The big scary one is lurking about and we should probably keep quiet for the time being.",Stranger
+t114bff38a2,"See that thing over there?
+[wait=0.2]That's a map of this floor, pick it up and try to find your way to the next floor.
+[wait=0.2]I'll find you again there, don't worry.",Stranger
+t482e71d18b,Can't you... guide me there?,(response)
+t00650186ba,"What, and put myself right in the middle of the danger?[wait=0.2] No thanks, I've got my own safe way to move around but that fleshy bit on you wouldn't let you come with me.",Stranger
+t38f146a3ad,W-wha-,(response)
+t136e90cee6,How do... how do I even use that?,(response)
+tdece76d339,How can... how can i even get there?,(response)
+t757f4348be,W-wha-,(response)
+td5e729c25d,"If you press the letter [wave amp=20 freq=3]""I""[/wave] on your keyboard,[wait=0.2] you'll see all of your collected items.[wait=0.2] Click on any item to select it and click again anywhere else to move it.",Stranger
+t37d6a5fb01,"There are two slots beneath all the others,[wait=0.2] those are your hands.[wait=0.2]Move an item, like that map, into any of them to equip it.",Stranger
+td7cb942479,B-ut how... how can i even get there?,(response)
+t748d4a874d,"O-okay, I got it...",(response)
+t0bf5c15bcc,Good.[wait=0.2] Now go.,Stranger
+t9f8b1282a1,"Oh, right.[wait=0.2] I should've guessed.",Stranger
+tc9e9c8d801,"You can move around by pressing the [wave amp=20 freq=3]""w""[wait=0.1] ""a"" [wait=0.1]""s"" [wait=0.1]and ""d""[/wave] keys,[wait=0.2] and look around by moving your mouse.",Stranger
+tb2754784ec,"If you need to run, keep [wave amp=20 freq=3]""alt""[/wave] pressed while moving to sprint.[wait=0.2] That'll get you tired though,[wait=0.2] and you won't be able to run for a short while if you empty out the green bar above your head.",Stranger
+tf371735e08,"If you need to slow down, keep [wave amp=20 freq=3]""shift""[/wave] pressed while moving to sneak.[wait=0.2] While sneaking, you can lean slightly to your side to peak around corners by moving left or right.",Stranger
+t203cbc45d6,"Lastly, you can open or close doors by pressing the [wave amp=20 freq=3]""e""[/wave] key while near one.
+[wait=0.4]You got all that?",Stranger
+t73d44a2d86,Y-you said something about a map earlier...,(response)
+t5c726ce5f4,H-hm. Yes.,(response)
+tcb899cb6ae,Good.[wait=0.2] Now go.,Stranger
+tcf256f124d,What are you still doing here?[wait=0.2] Get going you dumb thingy.,Stranger
+t26af178fea,How do I even use that map you told me to get?,(response)
+t65bf32e4b8,How can... how can i even get there?,(response)
+t904f0ac6e3,Y-yes...,(response)
+t92342aba2c,"Oh,[wait=0.2] dang it,[wait=0.2] this gate was unlocked last time i came here.
+[wait=0.4]There is another stairway on the other side of this floor,[wait=0.2] try and get over there yourself, then we can talk.",Stranger

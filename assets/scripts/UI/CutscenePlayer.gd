@@ -8,7 +8,7 @@ extends VideoStreamPlayer
 func _ready():
 	finished.connect(_end)
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("game_pause"):
 		world.loadScene(scene)
 

@@ -27,7 +27,7 @@ func _ready():
 	loadScreenTimer.timeout.connect(_on_timeout)
 	loadScreen.get_theme_stylebox("panel", "fadeInLoader").texture.current_frame = 0
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("game_pause"):
 		pause_unpause()
 	if Input.is_action_just_pressed("inventory") and not paused:
@@ -73,6 +73,7 @@ func loadMainMenu():
 	sceneToLoad = "res://assets/scenes/mainMenu.tscn"
 	
 func loadScene(path: String):
+	if not loadScreenTimer.is_stopped(): return
 	loadScreenTimer.start(2)
 	loadScreen.theme_type_variation = "fadeOutLoader"
 	loadScreen.get_theme_stylebox("panel", "fadeOutLoader").texture.current_frame = 0
@@ -82,7 +83,7 @@ func loadScene(path: String):
 	unpause.emit()
 	sceneToLoad = "res://assets/scenes/" + path + ".tscn"
 
-func lockPlayerControls(lock):
+func lockPlayerControls(_lock):
 	lockControls.emit()
 	
 func _on_timeout():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wqq2q2i57wfe"]
+[gd_scene load_steps=9 format=3 uid="uid://wqq2q2i57wfe"]
 
 [ext_resource type="Script" path="res://assets/scripts/PathFinder.gd" id="1_av2fj"]
 [ext_resource type="PackedScene" uid="uid://1i6qrocp34o7" path="res://assets/prefabs/npcs/bloodlustModel.tscn" id="2_qp6vi"]
@@ -6,16 +6,64 @@
 [ext_resource type="AudioStream" uid="uid://cspkmij53eb5n" path="res://assets/audio/rosnado.mp3" id="4_8d81b"]
 [ext_resource type="AudioStream" uid="uid://cuml0ymtmlsh8" path="res://assets/audio/bufando.mp3" id="4_ti38g"]
 [ext_resource type="AudioStream" uid="uid://edoscigpfhji" path="res://assets/audio/sfx_whoosh_lo02.wav" id="6_yimpp"]
+[ext_resource type="AudioStream" uid="uid://b7xfve82x2dk6" path="res://assets/music/bloodlustChaseEnd.ogg" id="7_5meqv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_37xos"]
 size = Vector3(2.5, 3, 2.5)
 
 [node name="Bloodlust" type="CharacterBody3D"]
+process_mode = 1
 collision_layer = 8
 collision_mask = 6
 script = ExtResource("1_av2fj")
 
 [node name="Bloodlust" parent="." instance=ExtResource("2_qp6vi")]
+
+[node name="Skeleton3D" parent="Bloodlust/Armature" index="0"]
+bones/0/rotation = Quaternion(-0.176661, 0, 0, 0.984272)
+bones/1/rotation = Quaternion(0.0181762, 1.1919e-07, 2.16677e-09, 0.999835)
+bones/2/rotation = Quaternion(0.136824, 1.71478e-14, 3.26215e-08, 0.990595)
+bones/3/rotation = Quaternion(0.0947112, 1.06721e-14, 2.25809e-08, 0.995505)
+bones/4/rotation = Quaternion(0.0804093, 0.00105153, 0.00162823, 0.99676)
+bones/5/rotation = Quaternion(0.016864, 0.0513907, 0.00298264, 0.998532)
+bones/6/rotation = Quaternion(-0.168069, 3.19099e-08, -0.0212473, 0.985546)
+bones/7/rotation = Quaternion(0.819531, 4.10356e-09, 0.0856515, 0.566598)
+bones/8/rotation = Quaternion(0.804892, 3.21023e-10, 0.0841215, 0.587429)
+bones/9/rotation = Quaternion(-0.295404, 0.145057, -0.761087, 0.558964)
+bones/10/rotation = Quaternion(0.467083, -0.0741754, 0.151045, 0.868054)
+bones/11/rotation = Quaternion(-0.154865, -0.0111512, -0.0657097, 0.985685)
+bones/12/rotation = Quaternion(-0.035321, 0.000541969, -0.00874824, 0.999338)
+bones/13/rotation = Quaternion(0.0444213, -0.000783383, 0.0206332, 0.9988)
+bones/14/rotation = Quaternion(0.613456, -0.00700303, -0.249446, 0.749266)
+bones/15/rotation = Quaternion(-0.605228, 0.0990886, 0.037961, 0.788948)
+bones/16/rotation = Quaternion(-0.0311263, 0.00339473, -0.0717948, 0.996928)
+bones/17/rotation = Quaternion(0.0178269, -0.00026198, 0.043314, 0.998902)
+bones/18/rotation = Quaternion(-0.00918896, -6.19018e-09, -0.037759, 0.999245)
+bones/19/rotation = Quaternion(-0.285892, -0.152015, 0.764711, 0.557112)
+bones/20/rotation = Quaternion(0.477204, 0.533949, 0.115138, 0.688417)
+bones/21/rotation = Quaternion(-0.166061, -0.515803, -0.0269191, 0.840028)
+bones/22/rotation = Quaternion(-0.035321, -0.000541903, 0.00874827, 0.999338)
+bones/23/rotation = Quaternion(0.0444214, 0.000783369, -0.0206332, 0.9988)
+bones/24/rotation = Quaternion(0.613456, 0.00700301, 0.249446, 0.749266)
+bones/25/rotation = Quaternion(-0.605229, -0.0990887, -0.037961, 0.788948)
+bones/26/rotation = Quaternion(-0.0311262, -0.00339473, 0.0717948, 0.996928)
+bones/27/rotation = Quaternion(0.0178269, 0.000261978, -0.043314, 0.998902)
+bones/28/rotation = Quaternion(-0.00918896, -2.89473e-09, 0.037759, 0.999245)
+bones/29/rotation = Quaternion(0.787805, 0.0878161, 0.572793, -0.208707)
+bones/30/rotation = Quaternion(-0.14225, -0.0104116, 0.107446, 0.983927)
+bones/31/rotation = Quaternion(0.038034, -0.00597495, 0.0844313, 0.995685)
+bones/32/rotation = Quaternion(-0.26696, -0.0540055, -0.643937, 0.714955)
+bones/33/rotation = Quaternion(0.790046, -0.088634, -0.569699, -0.208361)
+bones/34/rotation = Quaternion(-0.141828, 0.0065525, -0.108003, 0.98396)
+bones/35/rotation = Quaternion(0.038034, 0.00597512, -0.0844313, 0.995685)
+bones/36/rotation = Quaternion(-0.26696, 0.0540056, 0.643937, 0.714955)
+bones/37/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+
+[node name="Cube" parent="Bloodlust/Armature/Skeleton3D" index="0"]
+ignore_occlusion_culling = true
+
+[node name="AnimationPlayer" parent="Bloodlust/Armature/Skeleton3D" index="1"]
+blend_times = [&"howl", &"howl", 0.1]
 
 [node name="Behaviour" type="Node3D" parent="."]
 script = ExtResource("3_vcapu")
@@ -58,7 +106,15 @@ unit_size = 4.0
 max_distance = 50.0
 bus = &"SFX"
 
+[node name="music" type="AudioStreamPlayer3D" parent="Behaviour"]
+stream = ExtResource("7_5meqv")
+volume_db = -15.0
+unit_size = 20.0
+bus = &"Music"
+
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [connection signal="body_entered" from="Behaviour/Area3D" to="Behaviour" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Behaviour/Area3D" to="Behaviour" method="_on_area_3d_body_exited"]
+
+[editable path="Bloodlust"]

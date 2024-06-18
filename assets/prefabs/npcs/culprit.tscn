@@ -127,15 +127,11 @@ switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cvphd"]
-advance_mode = 2
-advance_expression = "not (get(\"parameters/conditions/playerInRange\")) or (DialogueState.CulpritHide)"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3bja8"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vicun"]
-advance_mode = 2
-advance_condition = &"playerInRange and not DialogueState.CulpritHide"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1ykpc"]
 switch_mode = 2
@@ -154,7 +150,7 @@ states/leave/position = Vector2(719, 206)
 transitions = ["appear", "idle", SubResource("AnimationNodeStateMachineTransition_ly2kr"), "idle", "leave", SubResource("AnimationNodeStateMachineTransition_cvphd"), "Start", "hide", SubResource("AnimationNodeStateMachineTransition_3bja8"), "hide", "appear", SubResource("AnimationNodeStateMachineTransition_vicun"), "leave", "hide", SubResource("AnimationNodeStateMachineTransition_1ykpc")]
 graph_offset = Vector2(17, 23)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ipd7r"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_y0rc7"]
 size = Vector3(1.5, 4, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rynby"]
@@ -210,17 +206,21 @@ bones/35/rotation = Quaternion(-0.0776808, -1.8244e-08, -0.10563, 0.991367)
 
 [node name="Cube" parent="Armature/Skeleton3D" index="0"]
 layers = 64
+cast_shadow = 0
+extra_cull_margin = 20.0
+ignore_occlusion_culling = true
 surface_material_override/0 = SubResource("ShaderMaterial_o06hh")
 surface_material_override/1 = SubResource("ShaderMaterial_77uri")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.999994, 0.0033374, -0.000304212, -0.00333233, 0.980614, -0.195922, -0.000355557, 0.195922, 0.980619, 0.00286694, -1.46989, 0.0152135)
+transform = Transform3D(0.999994, 0.00333741, -0.000304215, -0.00333233, 0.980614, -0.195923, -0.000355557, 0.195923, 0.980619, 0.00286695, -1.46989, 0.0152135)
 bone_name = "Head"
 bone_idx = 5
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Armature/Skeleton3D/BoneAttachment3D" index="0"]
 transform = Transform3D(1, 0, -2.84217e-14, 5.42101e-20, 1, -2.27374e-13, 2.84217e-14, 2.27374e-13, 1, 0, 0.4, 0.02)
 layers = 64
+ignore_occlusion_culling = true
 amount = 100
 randomness = 1.0
 visibility_aabb = AABB(-1.00001, -1.00001, -1.00001, 2.00002, 2.00002, 2.00002)
@@ -235,13 +235,12 @@ playback_default_blend_time = 0.2
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeStateMachine_p8p5a")
 anim_player = NodePath("../AnimationPlayer")
-"parameters/conditions/playerInRange and not DialogueState.CulpritHide" = false
 
 [node name="SpawnRange" type="Area3D" parent="." index="3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnRange" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 0.5)
-shape = SubResource("BoxShape3D_ipd7r")
+shape = SubResource("BoxShape3D_y0rc7")
 
 [node name="InteractionRange" type="Area3D" parent="." index="4"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bvq4ekh8e56gb"]
+[gd_scene load_steps=23 format=3 uid="uid://bvq4ekh8e56gb"]
 
 [ext_resource type="Script" path="res://assets/scripts/world.gd" id="1_4e1ss"]
 [ext_resource type="PackedScene" uid="uid://wqq2q2i57wfe" path="res://assets/prefabs/npcs/bloodlust.tscn" id="3_xfirb"]
@@ -30,6 +30,26 @@ agent_height = 3.0
 agent_radius = 1.0
 agent_max_climb = 0.2
 
+[sub_resource type="GDScript" id="GDScript_hkc23"]
+script/source = "extends Area3D
+
+@onready var player:CharacterBody3D = get_tree().get_first_node_in_group(\"player\")
+@export var culprit: Node3D
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	body_entered.connect(activate)
+	
+func activate(body: Node3D):
+	if body.is_in_group(\"player\"):
+		culprit.forceState(\"idle\")
+		culprit.startDialogue()
+	queue_free()
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hxyke"]
+size = Vector3(1, 3, 1)
+
 [node name="World" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_4e1ss")
@@ -42,10 +62,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -15)
 initial_angle = 180.0
 
 [node name="Culprit" parent="." instance=ExtResource("4_pvj75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -13.7)
 dialogue_resource = ExtResource("5_7i6kv")
 spawnRangeScale = [11.5, 13.0]
-spawnRangeOffset = [3.0, 1.5]
+spawnRangeOffset = [3.0, 4.5]
+
+[node name="Culprit2" parent="." instance=ExtResource("4_pvj75")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, -38)
+dialogue_resource = ExtResource("5_7i6kv")
+dialogue_start = "lockedGate"
+spawnRangeScale = [19.25, 20.5]
+spawnRangeOffset = [-3.0, 2.5]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_orydg")
@@ -1057,3 +1084,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -5)
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("19_7qqyh")
 bake_mask = 4293918726
+bake_simplification_distance = 0.0
+
+[node name="Starter" type="Area3D" parent="." node_paths=PackedStringArray("culprit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -15)
+script = SubResource("GDScript_hkc23")
+culprit = NodePath("../Culprit")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Starter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_hxyke")

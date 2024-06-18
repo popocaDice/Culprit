@@ -39,12 +39,12 @@ shadow_mesh = SubResource("ArrayMesh_dn8p0")
 data = PackedVector3Array(-10, -400, 0, 10, -400, -400, -10, -400, -400, -10, -400, 0, 10, -400, 0, 10, -400, -400, 10, 0, 0, -10, 0, -400, 10, 0, -400, 10, 0, 0, -10, 0, 0, -10, 0, -400, 10, -400, 0, 10, 0, -400, 10, -400, -400, 10, -400, 0, 10, 0, 0, 10, 0, -400, -10, 0, 0, -10, -400, -400, -10, 0, -400, -10, 0, 0, -10, -400, 0, -10, -400, -400)
 
 [node name="Wall" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
 script = ExtResource("1_6xwjs")
 
 [node name="Wall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, -0.01, 0, 0.01, -4.37114e-10, 0, 0, 0)
 layers = 2
+gi_mode = 0
 mesh = SubResource("ArrayMesh_01epq")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("1_otxyr")

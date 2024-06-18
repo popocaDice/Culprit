@@ -19,6 +19,7 @@ gravity = Vector3(0, 0.05, 0)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vge86"]
 transparency = 1
 albedo_texture = ExtResource("3_j31nm")
+albedo_texture_force_srgb = true
 emission_enabled = true
 emission_texture = ExtResource("3_j31nm")
 
@@ -57,11 +58,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.545, 2.418, -1.569)
 light_color = Color(0.784314, 0.396078, 0.054902, 1)
 light_energy = 5.0
 light_specular = 0.0
-light_bake_mode = 0
+light_bake_mode = 1
+light_cull_mask = 4294967279
 shadow_enabled = true
 distance_fade_enabled = true
-distance_fade_begin = 50.0
+distance_fade_begin = 10.0
 distance_fade_shadow = 80.0
+distance_fade_length = 5.0
 omni_range = 10.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="MountedTorch2" index="2"]

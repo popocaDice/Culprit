@@ -7,16 +7,12 @@ func _ready():
 	world = get_node("/root/World")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_quit_pressed():
 	world.loadMainMenu()
 
 
 func _on_load_pressed():
+	world.pause_unpause()
 	world.loadScene("Level1")
 	
 func gameOver():

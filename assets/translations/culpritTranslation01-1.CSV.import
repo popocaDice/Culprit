@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bi4l4kwig2epo"
+
+[deps]
+
+files=["res://assets/translations/culpritTranslation01-1.pt_BR.translation", "res://assets/translations/culpritTranslation01-1.en.translation"]
+
+source_file="res://assets/translations/culpritTranslation01-1.CSV"
+dest_files=["res://assets/translations/culpritTranslation01-1.pt_BR.translation", "res://assets/translations/culpritTranslation01-1.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

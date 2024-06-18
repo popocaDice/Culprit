@@ -35,6 +35,8 @@ var locked_controls = false
 @onready var world = get_tree().current_scene
 @export var inventory: Inventory
 
+@onready var ambienceSounds = [load("res://assets/audio/ambienceWind.mp3"), load("res://assets/audio/109374__dobroide__20101121windhowlsoft01.wav"), load("res://assets/audio/109375__dobroide__20101121windhowlsoft02.wav"), load("res://assets/audio/386440__giddster__water-splash-drops-2.wav"), load("res://assets/audio/484727__dobroide__20190809howling131.wav")]
+
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var ambienceWait: bool = false
@@ -163,20 +165,12 @@ func damagePercent(value):
 	
 func getItem(item : InventoryItem):
 	parts.sfx_audio_player.stream = load("res://assets/audio/click.mp3")
-	parts.sfx_audio_player.volume_db = -23
 	parts.sfx_audio_player.play()
 	inventory.insert(item)
 	
-
-func AmbiencePlay():
-	ambienceWait = true
-	await get_tree().create_timer(randf_range(1, 10)).timeout
-	parts.ambience_audio_player.stream = load("res://assets/audio/ambienceWind.mp3")
-	parts.ambience_audio_player.play()
-	ambienceWait = false
 	
-func HintInteract(show):
-	$HUD/InteractionHint.visible = show
+func HintInteract(hint):
+	$HUD/InteractionHint.visible = hint
 	
 func UpdateHands():
 	left_hand = not !inventory.hands[0].item
@@ -191,3 +185,12 @@ func UpdateHands():
 func LockControls(state):
 	locked_controls = state
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if state else Input.MOUSE_MODE_CAPTURED)
+
+func AmbiencePlay():
+	ambienceWait = true
+	await get_tree().create_timer(randf_range(1, 10)).timeout
+	parts.ambience_audio_player.stream = ambienceSounds.pick_random()
+	parts.ambience_audio_player.play()
+
+func _on_ambience_finished():
+	ambienceWait = false

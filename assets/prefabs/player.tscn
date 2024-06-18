@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_51v1g"]
 [ext_resource type="Script" path="res://assets/scripts/StaminaBar.gd" id="2_o8xbn"]
 [ext_resource type="Resource" uid="uid://r1k4wxlctvnv" path="res://assets/prefabs/inventory/playerinventory.tres" id="2_up17t"]
-[ext_resource type="CameraAttributesPractical" uid="uid://d15uifp0twa7n" path="res://assets/prefabs/cameraSettings.tres" id="2_wgbme"]
+[ext_resource type="CameraAttributesPractical" path="res://assets/prefabs/cameraSettings.tres" id="2_wgbme"]
 [ext_resource type="Script" path="res://assets/scripts/PauseMenu.gd" id="3_lntdj"]
 [ext_resource type="Theme" uid="uid://x6k7y2aew8c4" path="res://assets/themes/baseUITheme.tres" id="4_ow1mb"]
 [ext_resource type="PackedScene" uid="uid://cmr1uacycu1h5" path="res://assets/models/Characters/girl.glb" id="4_p884e"]
@@ -109,10 +109,10 @@ script/source = "extends Node3D
 
 @onready var animation = $girl/AnimationPlayer
 
-func leftHand(item: InventoryItem):
+func leftHand(_item: InventoryItem):
 	animation.play(\"HoldMap\")
 
-func rightHand(item: InventoryItem):
+func rightHand(_item: InventoryItem):
 	pass
 "
 
@@ -414,15 +414,20 @@ volume_db = -10.0
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_xs2e7")
+volume_db = -20.0
 max_polyphony = 10
+bus = &"SFX"
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_q8bhx")
+volume_db = -23.0
 max_polyphony = 10
+bus = &"SFX"
 
 [connection signal="pressed" from="HUD/PauseMenu/Pause/Resume" to="HUD/PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="HUD/PauseMenu/Pause/Settings" to="HUD/PauseMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="HUD/PauseMenu/Pause/Quit" to="HUD/PauseMenu" method="_on_quit_pressed"]
 [connection signal="timeout" from="HUD/PauseMenu/Timer" to="HUD/PauseMenu" method="_on_timer_timeout"]
+[connection signal="finished" from="Ambience" to="." method="_on_ambience_finished"]
 
 [editable path="Hands/girl"]

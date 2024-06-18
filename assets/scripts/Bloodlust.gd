@@ -72,6 +72,7 @@ func getMovementSpeed():
 
 func idleState():
 	animator.play("idle")
+	playChaseMusic("res://assets/music/bloodlustChaseEnd.ogg")
 	current_movement_speed = walk_movement_speed
 	await get_tree().create_timer(randf_range(2.0, 10.0)).timeout
 	waiting = false
@@ -89,9 +90,11 @@ func playerInSightState():
 		$bufando.stop()
 		if not $rugindo.playing: $rugindo.play()
 		await get_tree().create_timer(3).timeout
+		playChaseMusic("res://assets/music/bloodlustChaseLoop.ogg")
 		current_movement_speed = sprint_movement_speed
 		$bufando.play()
 	animator.play("sprint")
+	playChaseMusic("res://assets/music/bloodlustChaseLoop.ogg")
 	chasing = chase_duration
 	current_movement_speed = sprint_movement_speed
 	get_parent_node_3d().set_movement_target(player.position)
@@ -108,19 +111,22 @@ func chaseLostPlayerState():
 
 func chaseSoundState():
 	animator.play("sprint")
+	playChaseMusic("res://assets/music/bloodlustChaseIntro.ogg")
 	current_movement_speed = sprint_movement_speed
 	get_parent_node_3d().set_movement_target(player.position)
 	return
 
 func patrolState():
 	await get_tree().create_timer(2).timeout
+	playChaseMusic("res://assets/music/bloodlustChaseEnd.ogg")
 	if(waiting):
 		waiting = false
 		current_movement_speed = sprint_movement_speed
 		animator.play("sprint")
 		get_parent_node_3d().set_movement_target(global_position + Vector3(randf_range(-8, 8), 0, randf_range(-8, 8)))
 	return
-	
+
+
 func attackState():
 	can_attack = false
 	animator.play("attack")
@@ -129,7 +135,6 @@ func attackState():
 	player.damagePercent(50)
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
-	
 
 
 func _on_area_3d_body_entered(body):
@@ -140,3 +145,11 @@ func _on_area_3d_body_entered(body):
 func _on_area_3d_body_exited(body):
 	if body == player:
 		player_in_attack_range = false
+		
+func playChaseMusic(songPath: String):
+	var audioPlayer: AudioStreamPlayer3D = $music
+	var audioTime = audioPlayer.get_playback_position() if not songPath == "res://assets/music/bloodlustChaseEnd.ogg" else 0
+	var song = load(songPath)
+	if not audioPlayer.stream == song:
+		audioPlayer.stream = song
+		audioPlayer.play(audioTime)

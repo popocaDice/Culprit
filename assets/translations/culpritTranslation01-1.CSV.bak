@@ -1,0 +1,37 @@
+keys,pt_BR,en
+te5ccc80902,"Ora ora, como que essa coisinha esquisita foi parar aqui?[wait=0.5]\n[shake rate=20 level=10]EI[/shake],[wait=0.3] coisinha,[wait=0.3] tu fala, ou só grita mesmo?","My oh my, how'd this weird lil thing get here?[wait=0.5]\n[shake rate=20 level=10]OY[/shake],[wait=0.3] thingy,[wait=0.3] can you speak, or is screaming all you can do?"
+t51371dc34f,Q-quem é você? Cadê a minha mamãe?,W-who are you? Wheres mommy?
+t6de130910d,Fala. Bom.,You can.[wait=0.2] Good.
+te57e000ae0,Huh?,Huh?
+t8309730620,[wave amp=20 freq=3]Parece que não[speed=0.2]...[/wave][wait=1][next=auto],[wave amp=20 freq=3]Guess you can't[speed=0.2]...[/wave][wait=1][next=auto]
+t113b023a40,"Uhhh hmmmm...,,.","Uhhh hmmmm...,,."
+tab6efd97ee,"Beleza tanto faz,[wait=0.2] eu me viro.","Alright whatever,[wait=0.2] I can do this."
+t3d1da3ccc7,Q-quem é você? Cadê a minha mamãe?,W-who are you? Wheres mommy?
+tede5342cf4,Então tu [speed=0.2][shake rate=20 level=10]FALA[/shake][speed=0.5] sim.[wait=0.2] Beleza.,So you[speed=0.2][shake rate=20 level=10]CAN[/shake][speed=0.5] speak.[wait=0.2] Okay.
+t174b956963,"Não sei dessa mamãe que tu ta falando, mas aqui não é um bom lugar para você ficar se explicando.[wait=0.2] O coisa feia lá fora tá rondando por aqui e não é uma boa ideia ficar fazendo barulho por aqui.","Don't know about this mommy individual you're talking about, but this isn't a safe spot for you to explain yourself yet.[wait=0.2] Big and angry over there is lurking about and we really shouldn't be making any noise near it."
+t114bff38a2,"Ta vendo aquele negócio ali?\n[wait=0.2]É um mapa desse andar, pega ele e tenta chegar no próximo andar.\n[wait=0.2]Eu te encontro lá denovo, não se preocupe.","See that thing over there?\n[wait=0.2]It's a map for this floor, take and and try to get to the next.\n[wait=0.2]I'll find you there again, dont worry."
+t482e71d18b,Você não poderia... me ajudar até lá?,Couldn't you... guide me there?
+t00650186ba,"E me meter no meio da bagunça?[wait=0.2] Não muitíssimo obrigado, eu tenho o meu próprio jeito de andar por aqui mas essas tripas escondidas dentro de você não te deixariam vir junto.","And just stick around in the mess out there?[wait=0.2] No thanks,[wait=0.2] I got my own way of moving around this place but that fleshy bit on you wouldn't let you come with me."
+t38f146a3ad,Q- O quê-,W-what?
+t136e90cee6,Como que... como que eu uso aquilo?,How... how do i even use that?
+tdece76d339,Como que... como que eu consigo chegar lá?,How... how can i even get there?
+t757f4348be,Q- O quê-,W-what?
+td5e729c25d,"Se tu apertar a letra [wave amp=20 freq=3]""I""[/wave] no seu teclado,[wait=0.2] você vai ver todos os itens que coletou até o momento.[wait=0.2] Clique em um item pra selecionar ele e clique novamente em qualquer outro lugar para mover ele.","If you press the [wave amp=20 freq=3]""I""[/wave] key on your keyboard,[wait=0.2]  you'll see all the items you've collected.[wait=0.2] Click any item to select it and then click anywhere else to move it."
+t37d6a5fb01,"Tem dois espaços separados logo abaixo de todos os outros.[wait=0.2] Aqueles são as suas mãos. [wait=0.2]Mova um item, como aquele mapa, até qualquer um deles para equipá-lo.","There are two slots beneath all the others[wait=0.2]  Those are your hands.[wait=0.2] Move any item, like that map, into one of them to equip it. Got that?"
+td7cb942479,M-mas... como que eu consigo chegar lá?,B-but... How can i even get there?
+t748d4a874d,E-Entendi...,I-I think so...
+t0bf5c15bcc,Bom.[wait=0.2] Agora se manda.,Good.[wait=0.2]  Now go.
+t9f8b1282a1,"Ah, sim.[wait=0.2] Faz sentido.","Oh, yeah.[wait=0.2] Should've expected that."
+tc9e9c8d801,"Você consegue andar ao apertar as teclas [wave amp=20 freq=3]""w""[wait=0.1] ""a"" [wait=0.1]""s"" [wait=0.1]e ""d""[/wave],[wait=0.2] e olhar ao seu redor movendo o seu mouse.","You can move around by pressing the [wave amp=20 freq=3]""w""[wait=0.1] ""a"" [wait=0.1]""s"" [wait=0.1] and ""d""[/wave] keys,[wait=0.2] and look around by moving your mouse."
+tb2754784ec,"Se você precisar correr, mantenha [wave amp=20 freq=3]""alt""[/wave] apertado enquanto anda pra apertar o passo.[wait=0.2]\nIsso vai te cansar aos poucos,[wait=0.2] e você não vai conseguir correr mais por um tempinho se esvaziar a barrinha verde em cima da tua cabeça.","If you need to run, keep the [wave amp=20 freq=3]""alt""[/wave] key pressed while moving to sprint.[wait=0.2] \nThat'll tire you out though,[wait=0.2] and you won't be able to run again for a while if you empty out that green bar above your head."
+tf371735e08,"Se precisar ir mais devagar, mantenha [wave amp=20 freq=3]""shift""[/wave] apertada enquanto anda para se esgueirar.[wait=0.2] \nEnquanto se esgueirando, você pode se virar um pouco pro lado para ver atrás de cantos ao se mover para a esquerda ou direita.","If you need to slow down, keep the [wave amp=20 freq=3]""shift""[/wave] key pressed while moving to sneak.[wait=0.2] \nWhile sneaking, you can lean a little to your sides to look around corners by moving left or right."
+t203cbc45d6,"E por último, você pode abrir e fechar portas ao apertar a tecla [wave amp=20 freq=3]""e""[/wave] enquanto perto de uma.\n[wait=0.4]Sacou tudo?","Lastly, you can open and close doors by pressing the [wave amp=20 freq=3]""e""[/wave] key while next to one.\n[wait=0.4]Got all of that?"
+t73d44a2d86,V-você disse algo sobre um mapa mais cedo...,Y-you said something about a map earlier...
+t5c726ce5f4,H-hum. Sim.,H-hm. Yes.
+tcb899cb6ae,Bom.[wait=0.2] Agora vaza.,Good.[wait=0.2]  Now go.
+tcf256f124d,O que que tu ainda ta fazendo aqui?[wait=0.2] Mete o pé coisinha besta.,"What are you still doing here?[wait=0.2] Get going, dumb thingy."
+t26af178fea,Como eu uso aquele mapa que o senhor me mandou pegar?,H-how do i even use that map you told me to get?
+t65bf32e4b8,Como que... como que faço isso?,H-how... how can i get there?
+t904f0ac6e3,S-Sim...,Y-yes...
+t92342aba2c,"Ah,[wait=0.2] peste,[wait=0.2] esse portão estava aberto da última vez que eu passei aqui.\n[wait=0.4]Tem outra escadaria do outro lado desse andar,[wait=0.2] tenta chegar lá e a gente se fala denovo.","Oh,[wait=0.2] dang it,[wait=0.2] that gate was unlocked last time I was around here.\n[wait=0.4]There's another stairway on the other side of this floor,[wait=0.2] try and get there, then we can actually talk."
+Stranger,Stranger,Estranho
